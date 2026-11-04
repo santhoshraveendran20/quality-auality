@@ -3,7 +3,7 @@ import { Clock, MapPin, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import Logo from '@/components/Logo';
 import { NAV } from '@/components/Header';
-import { addressEn, displayPhone, hasPhone, store, telHref } from '@/lib/store';
+import { addressEn, displayPhone, phones, store, telHref } from '@/lib/store';
 import { hoursText } from '@/lib/hours';
 import ta from '@/i18n/ta.json';
 
@@ -49,12 +49,12 @@ export default function Footer() {
             <Clock aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
             {hoursText()}
           </p>
-          {hasPhone && (
-            <a href={telHref()} className="flex gap-2 font-medium" data-track="call">
+          {phones.map((n) => (
+            <a key={n} href={telHref(n)} className="flex gap-2 font-medium" data-track="call">
               <Phone aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-              {displayPhone(store.phone)}
+              {displayPhone(n)}
             </a>
-          )}
+          ))}
         </div>
       </div>
       <Separator />

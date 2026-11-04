@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import OpenBadge from '@/components/OpenBadge';
 import ActionLink from '@/components/ActionLink';
-import { addressEn, displayPhone, hasPhone, store, telHref } from '@/lib/store';
+import { addressEn, displayPhone, phones, store, telHref } from '@/lib/store';
 import { hoursText } from '@/lib/hours';
 import ta from '@/i18n/ta.json';
 
@@ -47,10 +47,14 @@ export default function VisitCard() {
           {hoursText()}
         </Row>
         <Row icon={Phone} title={ta.phone}>
-          {hasPhone ? (
-            <a href={telHref()} className="font-medium hover:underline" data-track="call">
-              {displayPhone(store.phone)}
-            </a>
+          {phones.length ? (
+            <span className="flex flex-col gap-0.5">
+              {phones.map((n) => (
+                <a key={n} href={telHref(n)} className="font-medium hover:underline" data-track="call">
+                  {displayPhone(n)}
+                </a>
+              ))}
+            </span>
           ) : (
             <span className="text-muted-foreground">{ta.phoneSoon}</span>
           )}

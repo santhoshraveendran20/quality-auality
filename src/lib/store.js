@@ -12,7 +12,10 @@ const intl = (value) => {
 export const hasPhone = digits(store.phone).length >= 10;
 export const hasWhatsApp = digits(store.whatsapp).length >= 10;
 
-export const telHref = () => (hasPhone ? `tel:+${intl(store.phone)}` : null);
+// Every valid shop number; the first one is the main number used by the Call buttons.
+export const phones = [store.phone, store.phone2].filter((n) => digits(n).length >= 10);
+
+export const telHref = (value = store.phone) => (digits(value).length >= 10 ? `tel:+${intl(value)}` : null);
 
 export const waHref = (message = ta.whatsappGreeting) =>
   hasWhatsApp ? `https://wa.me/${intl(store.whatsapp)}?text=${encodeURIComponent(message)}` : null;
