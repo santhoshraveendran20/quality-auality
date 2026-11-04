@@ -9,8 +9,10 @@ import {
   LayoutGrid,
   MapPin,
   Moon,
+  PartyPopper,
   Sparkles,
   Tag,
+  Truck,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -133,12 +135,21 @@ function Features() {
     { icon: MapPin, title: ta.landmark, text: `${store.address_ta.line2}, புதுக்கோட்டை – 622001` },
     { icon: Clock, title: ta.hours, text: hoursText() },
     { icon: BadgeCheck, title: 'தரமான பொருட்கள்', text: 'நம்பகமான பிராண்டுகள் · நியாயமான விலை' },
+    { icon: PartyPopper, title: 'திருமண ஆர்டர்கள் ஏற்கப்படும்', text: 'திருமணம் மற்றும் விசேஷங்களுக்கான மொத்த ஆர்டர்கள்' },
+    { icon: Truck, title: 'வீட்டுக்கே டெலிவரி', text: '₹1000-க்கு மேல் வாங்கினால் வீட்டுக்கே டெலிவரி செய்யப்படும்' },
   ];
   return (
     <section className="container-x py-12">
-      <ul className="grid gap-4 md:grid-cols-3">
+      {/* 3 + 2 on large screens; the last card spans the full row on tablets */}
+      <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
         {items.map(({ icon: Icon, title, text }, i) => (
-          <Reveal as="li" key={title} from={SIDES[i]} delay={i * 100}>
+          <Reveal
+            as="li"
+            key={title}
+            from={SIDES[i % 3]}
+            delay={(i % 3) * 100}
+            className={i < 3 ? 'lg:col-span-2' : i === items.length - 1 ? 'md:col-span-2 lg:col-span-3' : 'lg:col-span-3'}
+          >
             <Card className="h-full gap-0 py-5">
               <CardHeader className="grid-cols-[auto_1fr] grid-rows-1 items-center gap-4 px-5">
                 <span className="grid size-10 place-items-center rounded-lg bg-primary/10 text-primary">
