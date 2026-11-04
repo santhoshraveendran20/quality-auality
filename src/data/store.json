@@ -1,0 +1,31 @@
+{
+  "name_ta": "குவாலிட்டி & குவாலிட்டி",
+  "name_en": "Quality & Quality",
+  "type_ta": "பல்பொருள் அங்காடி",
+  "type_en": "Departmental Store",
+  "years": 25,
+  "tagline_ta": "25 ஆண்டுகளாக புதுக்கோட்டை மக்களின் நம்பிக்கை",
+  "address_ta": {
+    "line1": "தண்டாயுதபாணி கோவில் எதிரில்",
+    "line2": "ஜி.எச். ரோடு, சாந்தநாதபுரம்",
+    "city": "புதுக்கோட்டை – 622001",
+    "state": "தமிழ்நாடு"
+  },
+  "address_en": {
+    "street": "Opposite To Dhandayudhapani Temple, GH Road, Santhanathapuram",
+    "city": "Pudukkottai",
+    "pincode": "622001",
+    "state": "Tamil Nadu"
+  },
+  "mapQuery": "Dhandayudhapani Temple, GH Road, Santhanathapuram, Pudukkottai 622001",
+  "mapsPlaceUrl": "",
+  "phone": "7402145970",
+  "whatsapp": "7402145970",
+  "hours": {
+    "open": "06:00",
+    "close": "21:45",
+    "closedDays": []
+  },
+  "siteUrl": "",
+  "photos": []
+}

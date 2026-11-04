@@ -1,0 +1,18 @@
+[
+  { "slug": "aavin", "name_ta": "ஆவின் பால் பொருட்கள்", "name_en": "Aavin Milk & Dairy", "desc_ta": "பால், தயிர், நெய், வெண்ணெய், பன்னீர், ஐஸ்கிரீம்" },
+  { "slug": "cold-drinks", "name_ta": "குளிர் பானங்கள்", "name_en": "Cold Drinks", "desc_ta": "குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள்" },
+  { "slug": "juices", "name_ta": "பழச்சாறுகள்", "name_en": "Fresh Juices", "desc_ta": "புதிய பழங்களில் தயாரித்த பழச்சாறுகள்" },
+  { "slug": "groceries", "name_ta": "மளிகைப் பொருட்கள்", "name_en": "Groceries & Staples", "desc_ta": "அரிசி, பருப்பு, எண்ணெய், மசாலா பொடிகள்" },
+  { "slug": "vegetables", "name_ta": "காய்கறிகள் & பழங்கள்", "name_en": "Fruits & Vegetables", "desc_ta": "தினசரி புதிய காய்கறிகள், பழங்கள், கீரை வகைகள்" },
+  { "slug": "bakery", "name_ta": "பேக்கரி & முட்டை", "name_en": "Bakery & Eggs", "desc_ta": "பிரெட், பன், ரஸ்க், கேக், முட்டை" },
+  { "slug": "instant-food", "name_ta": "உடனடி உணவுகள்", "name_en": "Instant & Ready Food", "desc_ta": "நூடுல்ஸ், சேமியா, இட்லி / தோசை மாவு, ஊறுகாய், அப்பளம்" },
+  { "slug": "health-drinks", "name_ta": "ஹெல்த் டிரிங்க்ஸ் & காலை உணவு", "name_en": "Health Drinks & Breakfast", "desc_ta": "பூஸ்ட், ஹார்லிக்ஸ், போர்ன்விட்டா, ஓட்ஸ், கார்ன்ஃபிளேக்ஸ், தேன்" },
+  { "slug": "dry-fruits", "name_ta": "உலர் பழங்கள் & இனிப்புகள்", "name_en": "Dry Fruits & Sweeteners", "desc_ta": "முந்திரி, பாதாம், உலர் திராட்சை, பேரீச்சம்பழம், வெல்லம், கல்கண்டு" },
+  { "slug": "snacks", "name_ta": "தின்பண்டங்கள்", "name_en": "Snacks & Biscuits", "desc_ta": "பிஸ்கட், சிப்ஸ், முறுக்கு, சாக்லேட்" },
+  { "slug": "household", "name_ta": "வீட்டுப் பொருட்கள்", "name_en": "Household Care", "desc_ta": "சோப்புத் தூள், பாத்திரம் கழுவும் சோப், சுத்தப் பொருட்கள்" },
+  { "slug": "kitchenware", "name_ta": "சமையலறை & பிளாஸ்டிக் பொருட்கள்", "name_en": "Kitchen & Plasticware", "desc_ta": "டப்பாக்கள், வாளி, டம்ளர், அலுமினியம் ஃபாயில், டிஸ்போசபிள் தட்டு & கப்" },
+  { "slug": "personal-care", "name_ta": "தனிநபர் பராமரிப்பு", "name_en": "Personal Care", "desc_ta": "குளியல் சோப், ஷாம்பு, பற்பசை, தேங்காய் எண்ணெய்" },
+  { "slug": "baby-care", "name_ta": "குழந்தைப் பராமரிப்பு", "name_en": "Baby Care", "desc_ta": "டயப்பர், பேபி சோப், பவுடர், பேபி ஆயில், குழந்தை உணவு" },
+  { "slug": "pooja", "name_ta": "பூஜைப் பொருட்கள்", "name_en": "Pooja Items", "desc_ta": "ஊதுபத்தி, கற்பூரம், விளக்கு எண்ணெய், குங்குமம்" },
+  { "slug": "stationery", "name_ta": "எழுதுபொருட்கள்", "name_en": "Stationery", "desc_ta": "நோட்டுப் புத்தகம், பேனா, பென்சில், ரப்பர், கம், செல்லோடேப்" }
+]

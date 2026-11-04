@@ -1,0 +1,1115 @@
+[
+  {
+    "id": "aavin-milk",
+    "category": "aavin",
+    "name_ta": "ஆவின் பால்",
+    "name_en": "Aavin Milk",
+    "sizes": [
+      "500 மி.லி",
+      "1 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-curd",
+    "category": "aavin",
+    "name_ta": "ஆவின் தயிர்",
+    "name_en": "Aavin Curd",
+    "sizes": [
+      "200 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-ghee",
+    "category": "aavin",
+    "name_ta": "ஆவின் நெய்",
+    "name_en": "Aavin Ghee",
+    "sizes": [
+      "200 மி.லி",
+      "500 மி.லி",
+      "1 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-butter",
+    "category": "aavin",
+    "name_ta": "ஆவின் வெண்ணெய்",
+    "name_en": "Aavin Butter",
+    "sizes": [
+      "100 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-paneer",
+    "category": "aavin",
+    "name_ta": "ஆவின் பன்னீர்",
+    "name_en": "Aavin Paneer",
+    "sizes": [
+      "200 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-buttermilk",
+    "category": "aavin",
+    "name_ta": "ஆவின் மோர்",
+    "name_en": "Aavin Buttermilk",
+    "sizes": [
+      "200 மி.லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-flavoured-milk",
+    "category": "aavin",
+    "name_ta": "ஆவின் நறுமணப் பால்",
+    "name_en": "Aavin Flavoured Milk",
+    "sizes": [
+      "200 மி.லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "aavin-ice-cream",
+    "category": "aavin",
+    "name_ta": "ஆவின் ஐஸ்கிரீம்",
+    "name_en": "Aavin Ice Cream",
+    "sizes": [
+      "கப்",
+      "கோன்",
+      "ஃபேமிலி பேக்"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "coca-cola",
+    "category": "cold-drinks",
+    "name_ta": "கோகா-கோலா",
+    "name_en": "Coca-Cola",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "pepsi",
+    "category": "cold-drinks",
+    "name_ta": "பெப்சி",
+    "name_en": "Pepsi",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "fanta",
+    "category": "cold-drinks",
+    "name_ta": "ஃபான்டா",
+    "name_en": "Fanta",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "sprite",
+    "category": "cold-drinks",
+    "name_ta": "ஸ்ப்ரைட்",
+    "name_en": "Sprite",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "7up",
+    "category": "cold-drinks",
+    "name_ta": "செவன் அப்",
+    "name_en": "7Up",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "mountain-dew",
+    "category": "cold-drinks",
+    "name_ta": "மவுண்டன் டியூ",
+    "name_en": "Mountain Dew",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "mirinda",
+    "category": "cold-drinks",
+    "name_ta": "மிரிண்டா",
+    "name_en": "Mirinda",
+    "sizes": [
+      "250 மி.லி",
+      "750 மி.லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "schweppes",
+    "category": "cold-drinks",
+    "name_ta": "ஷ்வெப்ஸ்",
+    "name_en": "Schweppes",
+    "sizes": [
+      "300 மி.லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "drinking-water",
+    "category": "cold-drinks",
+    "name_ta": "குடிநீர் பாட்டில்",
+    "name_en": "Packaged Drinking Water",
+    "sizes": [
+      "500 மி.லி",
+      "1 லி",
+      "2 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "orange-juice",
+    "category": "juices",
+    "name_ta": "ஆரஞ்சு ஜூஸ்",
+    "name_en": "Orange Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "watermelon-juice",
+    "category": "juices",
+    "name_ta": "தர்பூசணி ஜூஸ்",
+    "name_en": "Watermelon Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "lemon-juice",
+    "category": "juices",
+    "name_ta": "எலுமிச்சை ஜூஸ்",
+    "name_en": "Lemon Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "pomegranate-juice",
+    "category": "juices",
+    "name_ta": "மாதுளை ஜூஸ்",
+    "name_en": "Pomegranate Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "grape-juice",
+    "category": "juices",
+    "name_ta": "திராட்சை ஜூஸ்",
+    "name_en": "Grape Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "mixed-fruit-juice",
+    "category": "juices",
+    "name_ta": "கலவை பழச்சாறு",
+    "name_en": "Mixed Fruit Juice",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "ponni-rice",
+    "category": "groceries",
+    "name_ta": "பொன்னி அரிசி",
+    "name_en": "Ponni Rice",
+    "sizes": [
+      "1 கி.கி",
+      "5 கி.கி",
+      "25 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "toor-dal",
+    "category": "groceries",
+    "name_ta": "துவரம் பருப்பு",
+    "name_en": "Toor Dal",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "sugar",
+    "category": "groceries",
+    "name_ta": "சர்க்கரை",
+    "name_en": "Sugar",
+    "sizes": [
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "cooking-oil",
+    "category": "groceries",
+    "name_ta": "சமையல் எண்ணெய்",
+    "name_en": "Cooking Oil",
+    "sizes": [
+      "500 மி.லி",
+      "1 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "wheat-flour",
+    "category": "groceries",
+    "name_ta": "கோதுமை மாவு",
+    "name_en": "Wheat Flour",
+    "sizes": [
+      "1 கி.கி",
+      "5 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "salt",
+    "category": "groceries",
+    "name_ta": "உப்பு",
+    "name_en": "Salt",
+    "sizes": [
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "tea-powder",
+    "category": "groceries",
+    "name_ta": "டீ தூள்",
+    "name_en": "Tea Powder",
+    "sizes": [
+      "100 கி",
+      "250 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "coffee-powder",
+    "category": "groceries",
+    "name_ta": "காபி தூள்",
+    "name_en": "Coffee Powder",
+    "sizes": [
+      "100 கி",
+      "200 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "spice-powders",
+    "category": "groceries",
+    "name_ta": "மசாலா பொடிகள்",
+    "name_en": "Spice Powders",
+    "sizes": [
+      "50 கி",
+      "100 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "biscuits",
+    "category": "snacks",
+    "name_ta": "பிஸ்கட்",
+    "name_en": "Biscuits",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "chips",
+    "category": "snacks",
+    "name_ta": "சிப்ஸ்",
+    "name_en": "Chips",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "murukku",
+    "category": "snacks",
+    "name_ta": "முறுக்கு",
+    "name_en": "Murukku",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "mixture",
+    "category": "snacks",
+    "name_ta": "மிக்சர்",
+    "name_en": "Mixture",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "chocolates",
+    "category": "snacks",
+    "name_ta": "சாக்லேட்",
+    "name_en": "Chocolates",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "detergent",
+    "category": "household",
+    "name_ta": "சோப்புத் தூள்",
+    "name_en": "Detergent Powder",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "dishwash-bar",
+    "category": "household",
+    "name_ta": "பாத்திரம் கழுவும் சோப்",
+    "name_en": "Dishwash Bar",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "floor-cleaner",
+    "category": "household",
+    "name_ta": "தரை சுத்தம் செய்யும் திரவம்",
+    "name_en": "Floor Cleaner",
+    "sizes": [
+      "500 மி.லி",
+      "1 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "mosquito-repellent",
+    "category": "household",
+    "name_ta": "கொசு விரட்டி",
+    "name_en": "Mosquito Repellent",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "matchbox",
+    "category": "household",
+    "name_ta": "தீப்பெட்டி",
+    "name_en": "Matchbox",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "bath-soap",
+    "category": "personal-care",
+    "name_ta": "குளியல் சோப்",
+    "name_en": "Bath Soap",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "shampoo",
+    "category": "personal-care",
+    "name_ta": "ஷாம்பு",
+    "name_en": "Shampoo",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "toothpaste",
+    "category": "personal-care",
+    "name_ta": "பற்பசை",
+    "name_en": "Toothpaste",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "coconut-oil",
+    "category": "personal-care",
+    "name_ta": "தேங்காய் எண்ணெய்",
+    "name_en": "Coconut Oil",
+    "sizes": [
+      "100 மி.லி",
+      "200 மி.லி",
+      "500 மி.லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "toothbrush",
+    "category": "personal-care",
+    "name_ta": "பல் துலக்கி",
+    "name_en": "Toothbrush",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "agarbatti",
+    "category": "pooja",
+    "name_ta": "ஊதுபத்தி",
+    "name_en": "Incense Sticks",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "camphor",
+    "category": "pooja",
+    "name_ta": "கற்பூரம்",
+    "name_en": "Camphor",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "lamp-oil",
+    "category": "pooja",
+    "name_ta": "விளக்கு எண்ணெய்",
+    "name_en": "Lamp Oil",
+    "sizes": [
+      "500 மி.லி",
+      "1 லி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "kumkum-turmeric",
+    "category": "pooja",
+    "name_ta": "குங்குமம் & மஞ்சள்",
+    "name_en": "Kumkum & Turmeric",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "cotton-wicks",
+    "category": "pooja",
+    "name_ta": "விளக்குத் திரி",
+    "name_en": "Cotton Wicks",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "sambrani",
+    "category": "pooja",
+    "name_ta": "சாம்பிராணி",
+    "name_en": "Sambrani",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "tomato",
+    "category": "vegetables",
+    "name_ta": "தக்காளி",
+    "name_en": "Tomato",
+    "sizes": [
+      "250 கி",
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "onion",
+    "category": "vegetables",
+    "name_ta": "வெங்காயம்",
+    "name_en": "Onion",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "small-onion",
+    "category": "vegetables",
+    "name_ta": "சின்ன வெங்காயம்",
+    "name_en": "Shallots",
+    "sizes": [
+      "250 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "potato",
+    "category": "vegetables",
+    "name_ta": "உருளைக்கிழங்கு",
+    "name_en": "Potato",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "green-chilli",
+    "category": "vegetables",
+    "name_ta": "பச்சை மிளகாய், இஞ்சி, பூண்டு",
+    "name_en": "Green Chilli, Ginger & Garlic",
+    "sizes": [
+      "100 கி",
+      "250 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "banana",
+    "category": "vegetables",
+    "name_ta": "வாழைப்பழம்",
+    "name_en": "Banana",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "seasonal-fruits",
+    "category": "vegetables",
+    "name_ta": "சீசன் பழங்கள்",
+    "name_en": "Seasonal Fruits",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "coconut",
+    "category": "vegetables",
+    "name_ta": "தேங்காய்",
+    "name_en": "Coconut",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "bread",
+    "category": "bakery",
+    "name_ta": "பிரெட்",
+    "name_en": "Bread",
+    "sizes": [
+      "சிறியது",
+      "பெரியது"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "buns",
+    "category": "bakery",
+    "name_ta": "பன்",
+    "name_en": "Buns",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "rusk",
+    "category": "bakery",
+    "name_ta": "ரஸ்க்",
+    "name_en": "Rusk",
+    "sizes": [
+      "200 கி",
+      "300 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "cake",
+    "category": "bakery",
+    "name_ta": "கேக் & கப் கேக்",
+    "name_en": "Cake & Cupcakes",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "eggs",
+    "category": "bakery",
+    "name_ta": "முட்டை",
+    "name_en": "Eggs",
+    "sizes": [
+      "6",
+      "12",
+      "30"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "noodles",
+    "category": "instant-food",
+    "name_ta": "நூடுல்ஸ்",
+    "name_en": "Instant Noodles",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "vermicelli",
+    "category": "instant-food",
+    "name_ta": "சேமியா",
+    "name_en": "Vermicelli",
+    "sizes": [
+      "200 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "idli-dosa-batter",
+    "category": "instant-food",
+    "name_ta": "இட்லி / தோசை மாவு",
+    "name_en": "Idli & Dosa Batter",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "rava",
+    "category": "instant-food",
+    "name_ta": "ரவை",
+    "name_en": "Rava (Sooji)",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "ready-mix",
+    "category": "instant-food",
+    "name_ta": "ரெடி மிக்ஸ் (புளியோதரை, சாம்பார்)",
+    "name_en": "Ready Mixes",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "pickle",
+    "category": "instant-food",
+    "name_ta": "ஊறுகாய்",
+    "name_en": "Pickles",
+    "sizes": [
+      "200 கி",
+      "400 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "appalam",
+    "category": "instant-food",
+    "name_ta": "அப்பளம்",
+    "name_en": "Appalam (Papad)",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "boost",
+    "category": "health-drinks",
+    "name_ta": "பூஸ்ட்",
+    "name_en": "Boost",
+    "sizes": [
+      "200 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "horlicks",
+    "category": "health-drinks",
+    "name_ta": "ஹார்லிக்ஸ்",
+    "name_en": "Horlicks",
+    "sizes": [
+      "200 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "bournvita",
+    "category": "health-drinks",
+    "name_ta": "போர்ன்விட்டா",
+    "name_en": "Bournvita",
+    "sizes": [
+      "200 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "oats",
+    "category": "health-drinks",
+    "name_ta": "ஓட்ஸ்",
+    "name_en": "Oats",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "cornflakes",
+    "category": "health-drinks",
+    "name_ta": "கார்ன்ஃபிளேக்ஸ்",
+    "name_en": "Cornflakes",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "honey",
+    "category": "health-drinks",
+    "name_ta": "தேன்",
+    "name_en": "Honey",
+    "sizes": [
+      "250 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "cashew",
+    "category": "dry-fruits",
+    "name_ta": "முந்திரி",
+    "name_en": "Cashew",
+    "sizes": [
+      "50 கி",
+      "100 கி",
+      "250 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "almond",
+    "category": "dry-fruits",
+    "name_ta": "பாதாம்",
+    "name_en": "Almond",
+    "sizes": [
+      "50 கி",
+      "100 கி",
+      "250 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "raisins",
+    "category": "dry-fruits",
+    "name_ta": "உலர் திராட்சை",
+    "name_en": "Raisins",
+    "sizes": [
+      "50 கி",
+      "100 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "dates",
+    "category": "dry-fruits",
+    "name_ta": "பேரீச்சம்பழம்",
+    "name_en": "Dates",
+    "sizes": [
+      "250 கி",
+      "500 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "jaggery",
+    "category": "dry-fruits",
+    "name_ta": "வெல்லம்",
+    "name_en": "Jaggery",
+    "sizes": [
+      "500 கி",
+      "1 கி.கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "kalkandu",
+    "category": "dry-fruits",
+    "name_ta": "கல்கண்டு",
+    "name_en": "Rock Sugar (Kalkandu)",
+    "sizes": [
+      "100 கி",
+      "250 கி"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "batteries",
+    "category": "household",
+    "name_ta": "பேட்டரி",
+    "name_en": "Batteries",
+    "sizes": [
+      "AA",
+      "AAA"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "led-bulb",
+    "category": "household",
+    "name_ta": "LED பல்ப்",
+    "name_en": "LED Bulb",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "candles",
+    "category": "household",
+    "name_ta": "மெழுகுவர்த்தி",
+    "name_en": "Candles",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "containers",
+    "category": "kitchenware",
+    "name_ta": "பிளாஸ்டிக் டப்பாக்கள்",
+    "name_en": "Storage Containers",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "bucket-mug",
+    "category": "kitchenware",
+    "name_ta": "வாளி & மக்",
+    "name_en": "Bucket & Mug",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "steel-tumbler",
+    "category": "kitchenware",
+    "name_ta": "ஸ்டீல் டம்ளர் & தட்டு",
+    "name_en": "Steel Tumblers & Plates",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "foil",
+    "category": "kitchenware",
+    "name_ta": "அலுமினியம் ஃபாயில்",
+    "name_en": "Aluminium Foil",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "disposables",
+    "category": "kitchenware",
+    "name_ta": "டிஸ்போசபிள் தட்டு & கப்",
+    "name_en": "Disposable Plates & Cups",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "scrubber",
+    "category": "kitchenware",
+    "name_ta": "ஸ்க்ரப்பர் & ஸ்பாஞ்ச்",
+    "name_en": "Scrubber & Sponge",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "diapers",
+    "category": "baby-care",
+    "name_ta": "டயப்பர்",
+    "name_en": "Diapers",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "baby-soap",
+    "category": "baby-care",
+    "name_ta": "பேபி சோப்",
+    "name_en": "Baby Soap",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "baby-powder",
+    "category": "baby-care",
+    "name_ta": "பேபி பவுடர்",
+    "name_en": "Baby Powder",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "baby-oil",
+    "category": "baby-care",
+    "name_ta": "பேபி ஆயில்",
+    "name_en": "Baby Oil",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "baby-food",
+    "category": "baby-care",
+    "name_ta": "குழந்தை உணவு (செரலாக்)",
+    "name_en": "Baby Food (Cerelac)",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "notebooks",
+    "category": "stationery",
+    "name_ta": "நோட்டுப் புத்தகம்",
+    "name_en": "Notebooks",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "pens",
+    "category": "stationery",
+    "name_ta": "பேனா",
+    "name_en": "Pens",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "pencils",
+    "category": "stationery",
+    "name_ta": "பென்சில், ரப்பர், ஷார்ப்பனர்",
+    "name_en": "Pencil, Eraser & Sharpener",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "glue-tape",
+    "category": "stationery",
+    "name_ta": "கம் & செல்லோடேப்",
+    "name_en": "Glue & Tape",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "colour-pencils",
+    "category": "stationery",
+    "name_ta": "கலர் பென்சில் & க்ரேயான்ஸ்",
+    "name_en": "Colour Pencils & Crayons",
+    "sizes": [],
+    "price": null,
+    "inStock": true
+  }
+]
