@@ -135,14 +135,19 @@ function Features() {
     { icon: MapPin, title: ta.landmark, text: `${store.address_ta.line2}, புதுக்கோட்டை – 622001` },
     { icon: Clock, title: ta.hours, text: hoursText() },
     { icon: BadgeCheck, title: 'தரமான பொருட்கள்', text: 'நம்பகமான பிராண்டுகள் · நியாயமான விலை' },
-    { icon: PartyPopper, title: 'திருமண ஆர்டர்கள் ஏற்கப்படும்', text: 'திருமணம் மற்றும் விசேஷங்களுக்கான மொத்த ஆர்டர்கள்' },
+    {
+      icon: PartyPopper,
+      title: 'திருமண ஆர்டர்கள் ஏற்கப்படும்',
+      text: 'திருமணம் மற்றும் விசேஷங்களுக்கான மொத்த ஆர்டர்கள் — 24 மணி நேரமும் ஆர்டர் செய்யலாம்',
+      badge: '24 மணி நேரம்',
+    },
     { icon: Truck, title: 'வீட்டுக்கே டெலிவரி', text: '₹1000-க்கு மேல் வாங்கினால் வீட்டுக்கே டெலிவரி செய்யப்படும்' },
   ];
   return (
     <section className="container-x py-12">
       {/* 3 + 2 on large screens; the last card spans the full row on tablets */}
       <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
-        {items.map(({ icon: Icon, title, text }, i) => (
+        {items.map(({ icon: Icon, title, text, badge }, i) => (
           <Reveal
             as="li"
             key={title}
@@ -156,7 +161,15 @@ function Features() {
                   <Icon aria-hidden="true" className="size-5" />
                 </span>
                 <div>
-                  <CardTitle className="text-[15px]">{title}</CardTitle>
+                  <CardTitle className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[15px]">
+                    {title}
+                    {badge && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-semibold text-gold-foreground dark:text-gold">
+                        <Clock aria-hidden="true" className="size-3" />
+                        {badge}
+                      </span>
+                    )}
+                  </CardTitle>
                   <CardDescription>{text}</CardDescription>
                 </div>
               </CardHeader>
