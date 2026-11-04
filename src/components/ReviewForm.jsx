@@ -4,16 +4,12 @@ import { CheckCircle2, MessageCirclePlus, Send, Star, XIcon } from 'lucide-react
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import { hasWhatsApp, waHref } from '@/lib/store';
 
 const MAX = 300;
 const RATING_WORDS = ['', 'பரவாயில்லை', 'சுமார்', 'நன்று', 'மிக நன்று', 'அருமை!'];
 
-/**
- * "Share your review" dialog. The site has no backend, so a review is sent to the shop's
- * WhatsApp; the owner approves it and adds it to src/data/testimonials.json to publish it.
- */
-export default function ReviewForm() {
+/** "Share your review" dialog. `onSubmit` receives { name, place, rating, text }. */
+export default function ReviewForm({ onSubmit }) {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [name, setName] = useState('');
@@ -22,9 +18,8 @@ export default function ReviewForm() {
   const [hover, setHover] = useState(0);
   const [text, setText] = useState('');
 
-  if (!hasWhatsApp) return null;
-
   const valid = name.trim().length >= 2 && text.trim().length >= 10;
+  const shown = hover || rating;
 
   const reset = () => {
     setSent(false);
@@ -37,20 +32,9 @@ export default function ReviewForm() {
   const submit = (e) => {
     e.preventDefault();
     if (!valid) return;
-    const message = [
-      'புதிய வாடிக்கையாளர் கருத்து (இணையதளம்)',
-      `பெயர்: ${name.trim()}`,
-      place.trim() && `ஊர்: ${place.trim()}`,
-      `மதிப்பீடு: ${'⭐'.repeat(rating)} (${rating}/5)`,
-      `கருத்து: ${text.trim()}`,
-    ]
-      .filter(Boolean)
-      .join('\n');
-    window.open(waHref(message), '_blank', 'noopener,noreferrer');
+    onSubmit({ name, place, rating, text });
     setSent(true);
   };
-
-  const shown = hover || rating;
 
   return (
     <Dialog.Root
@@ -80,10 +64,10 @@ export default function ReviewForm() {
               </span>
               <Dialog.Title className="mt-4 text-xl font-semibold">நன்றி, {name.trim()}!</Dialog.Title>
               <Dialog.Description className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                வாட்ஸ்அப்பில் உங்கள் கருத்தை அனுப்பி முடிக்கவும். சரிபார்த்த பின் இணையதளத்தில் வெளியிடப்படும்.
+                உங்கள் கருத்து வாடிக்கையாளர் கருத்துகளில் சேர்க்கப்பட்டது.
               </Dialog.Description>
               <Dialog.Close asChild>
-                <Button className="mt-6 w-full">சரி</Button>
+                <Button className="mt-6 w-full">பார்க்க</Button>
               </Dialog.Close>
             </div>
           ) : (
@@ -143,11 +127,10 @@ export default function ReviewForm() {
                 />
               </label>
 
-              <Button type="submit" size="lg" disabled={!valid} className="w-full bg-emerald-600 text-white hover:bg-emerald-700">
+              <Button type="submit" size="lg" disabled={!valid} className="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-95">
                 <Send />
-                வாட்ஸ்அப் மூலம் அனுப்பு
+                கருத்தைச் சேர்
               </Button>
-              <p className="text-center text-xs text-muted-foreground">சரிபார்த்த பின் உங்கள் கருத்து இணையதளத்தில் வெளியிடப்படும்.</p>
             </form>
           )}
         </Dialog.Content>

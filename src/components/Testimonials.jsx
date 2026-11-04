@@ -3,7 +3,7 @@ import SectionHeading from '@/components/SectionHeading';
 import Reveal from '@/components/Reveal';
 import ReviewForm from '@/components/ReviewForm';
 import { cn } from '@/lib/utils';
-import testimonials from '@/data/testimonials.json';
+import useReviews from '@/hooks/useReviews';
 
 const AVATAR_TONES = [
   'from-emerald-500 to-green-700',
@@ -69,7 +69,7 @@ function MarqueeRow({ items, reverse = false, offset = 0 }) {
           )}
         >
           {track.map((t, i) => (
-            <li key={`${copy}-${i}`} className="flex" aria-hidden={i >= items.length || undefined}>
+            <li key={`${copy}-${i}-${t.id}`} className="flex" aria-hidden={i >= items.length || undefined}>
               <TestimonialCard t={t} index={(i % items.length) + offset} />
             </li>
           ))}
@@ -80,9 +80,8 @@ function MarqueeRow({ items, reverse = false, offset = 0 }) {
 }
 
 export default function Testimonials() {
-  const items = testimonials.items;
-  if (!items.length) return null;
-  const half = Math.ceil(items.length / 2);
+  const { reviews, addReview } = useReviews();
+  const half = Math.ceil(reviews.length / 2);
   return (
     <section className="relative overflow-hidden border-t py-12 sm:py-16">
       <div aria-hidden="true" className="absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
@@ -94,13 +93,41 @@ export default function Testimonials() {
           description="புதுக்கோட்டை மக்களின் அன்பும் நம்பிக்கையுமே எங்கள் பலம்."
         />
         <div className="mt-6 flex justify-center">
-          <ReviewForm />
+          <ReviewForm onSubmit={addReview} />
         </div>
       </Reveal>
-      <div className="relative mt-10 space-y-2">
-        <MarqueeRow items={items.slice(0, half)} />
-        <MarqueeRow items={items.slice(half)} offset={half} reverse />
-      </div>
+
+      {reviews.length === 0 ? (
+        <div className="container-x relative mt-10">
+          <div className="mx-auto flex max-w-md flex-col items-center rounded-2xl border border-dashed bg-card/60 px-6 py-10 text-center">
+            <span className="grid size-14 place-items-center rounded-full bg-gold/15 text-gold-foreground dark:text-gold">
+              <Quote aria-hidden="true" className="size-7" />
+            </span>
+            <p className="mt-4 text-lg font-semibold">இன்னும் கருத்துகள் இல்லை</p>
+            <p className="mt-1 text-sm text-muted-foreground">உங்கள் அனுபவத்தை முதலில் பகிர்ந்துகொள்ளுங்கள்!</p>
+          </div>
+        </div>
+      ) : reviews.length < 4 ? (
+        // Too few to scroll: show them centred.
+        <ul className="container-x relative mt-10 flex flex-wrap justify-center gap-4">
+          {reviews.map((t, i) => (
+            <li key={t.id} className="flex animate-in fade-in-0 zoom-in-95 duration-500">
+              <TestimonialCard t={t} index={i} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="relative mt-10 space-y-2">
+          {reviews.length < 8 ? (
+            <MarqueeRow items={reviews} />
+          ) : (
+            <>
+              <MarqueeRow items={reviews.slice(0, half)} />
+              <MarqueeRow items={reviews.slice(half)} offset={half} reverse />
+            </>
+          )}
+        </div>
+      )}
     </section>
   );
 }
