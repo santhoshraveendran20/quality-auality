@@ -1,7 +1,6 @@
 [
   { "slug": "aavin", "name_ta": "ஆவின் பால் பொருட்கள்", "name_en": "Aavin Milk & Dairy", "desc_ta": "பால், தயிர், நெய், வெண்ணெய், பன்னீர், ஐஸ்கிரீம்" },
   { "slug": "cold-drinks", "name_ta": "குளிர் பானங்கள்", "name_en": "Cold Drinks", "desc_ta": "குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள்" },
-  { "slug": "juices", "name_ta": "பழச்சாறுகள்", "name_en": "Fresh Juices", "desc_ta": "புதிய பழங்களில் தயாரித்த பழச்சாறுகள்" },
   { "slug": "groceries", "name_ta": "மளிகைப் பொருட்கள்", "name_en": "Groceries & Staples", "desc_ta": "அரிசி, பருப்பு, எண்ணெய், மசாலா பொடிகள்" },
   { "slug": "vegetables", "name_ta": "காய்கறிகள் & பழங்கள்", "name_en": "Fruits & Vegetables", "desc_ta": "தினசரி புதிய காய்கறிகள், பழங்கள், கீரை வகைகள்" },
   { "slug": "bakery", "name_ta": "பேக்கரி & முட்டை", "name_en": "Bakery & Eggs", "desc_ta": "பிரெட், பன், ரஸ்க், கேக், முட்டை" },

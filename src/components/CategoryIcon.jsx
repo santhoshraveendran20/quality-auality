@@ -2,7 +2,6 @@ import {
   Baby,
   Bath,
   Carrot,
-  Citrus,
   Coffee,
   Cookie,
   CookingPot,
@@ -22,7 +21,6 @@ import { cn } from '@/lib/utils';
 export const CATEGORY_ICONS = {
   aavin: Milk,
   'cold-drinks': CupSoda,
-  juices: Citrus,
   groceries: Wheat,
   vegetables: Carrot,
   bakery: Egg,
@@ -41,7 +39,6 @@ export const CATEGORY_ICONS = {
 const TONES = {
   aavin: 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
   'cold-drinks': 'bg-red-500/10 text-red-600 dark:text-red-400',
-  juices: 'bg-orange-500/10 text-orange-600 dark:text-orange-400',
   groceries: 'bg-amber-500/10 text-amber-700 dark:text-amber-400',
   vegetables: 'bg-green-500/10 text-green-700 dark:text-green-400',
   bakery: 'bg-orange-400/10 text-orange-700 dark:text-orange-300',
@@ -61,7 +58,6 @@ const TONES = {
 export const CATEGORY_COLORS = {
   aavin: '#2563eb',
   'cold-drinks': '#dc2626',
-  juices: '#ea580c',
   groceries: '#d97706',
   vegetables: '#16a34a',
   bakery: '#c2410c',

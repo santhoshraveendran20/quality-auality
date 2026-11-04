@@ -209,15 +209,15 @@ function Highlights() {
         <Card className="w-full overflow-hidden pt-0">
           <img
             src="/images/juices.webp"
-            alt="புதிய பழச்சாறுகள்"
+            alt="குளிர் பானங்கள்"
             width="680"
             height="720"
             loading="lazy"
             className="aspect-[16/7] w-full object-cover"
           />
           <CardHeader>
-            <CardTitle className="text-xl">குளிர் பானங்கள் & பழச்சாறுகள்</CardTitle>
-            <CardDescription className="text-[15px]">குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள், புதிய பழச்சாறுகள்.</CardDescription>
+            <CardTitle className="text-xl">குளிர் பானங்கள்</CardTitle>
+            <CardDescription className="text-[15px]">குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள் — எப்போதும் சில்லென்று.</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="flex flex-wrap gap-2">
@@ -236,9 +236,6 @@ function Highlights() {
                 குளிர் பானங்கள்
                 <ArrowRight />
               </Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/products/juices">பழச்சாறுகள்</Link>
             </Button>
           </CardFooter>
         </Card>

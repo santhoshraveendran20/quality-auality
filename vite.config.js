@@ -18,7 +18,7 @@ function storeSeo() {
   const title = `${store.name_ta} | ${store.type_ta}, புதுக்கோட்டை`;
   const description =
     `${store.name_ta} – புதுக்கோட்டை, ${store.address_ta.line1}. ${store.years} ஆண்டுகளாக ஆவின் பால், ` +
-    `குளிர் பானங்கள், பழச்சாறுகள், மளிகைப் பொருட்கள். ${store.name_en}, departmental store in Pudukkottai.`;
+    `குளிர் பானங்கள், மளிகைப் பொருட்கள். ${store.name_en}, departmental store in Pudukkottai.`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'GroceryStore',

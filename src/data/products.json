@@ -210,60 +210,6 @@
     "inStock": true
   },
   {
-    "id": "orange-juice",
-    "category": "juices",
-    "name_ta": "ஆரஞ்சு ஜூஸ்",
-    "name_en": "Orange Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "watermelon-juice",
-    "category": "juices",
-    "name_ta": "தர்பூசணி ஜூஸ்",
-    "name_en": "Watermelon Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "lemon-juice",
-    "category": "juices",
-    "name_ta": "எலுமிச்சை ஜூஸ்",
-    "name_en": "Lemon Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "pomegranate-juice",
-    "category": "juices",
-    "name_ta": "மாதுளை ஜூஸ்",
-    "name_en": "Pomegranate Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "grape-juice",
-    "category": "juices",
-    "name_ta": "திராட்சை ஜூஸ்",
-    "name_en": "Grape Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "mixed-fruit-juice",
-    "category": "juices",
-    "name_ta": "கலவை பழச்சாறு",
-    "name_en": "Mixed Fruit Juice",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
     "id": "ponni-rice",
     "category": "groceries",
     "name_ta": "பொன்னி அரிசி",
