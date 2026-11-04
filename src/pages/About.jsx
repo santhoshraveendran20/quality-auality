@@ -32,7 +32,7 @@ export default function About() {
         <Reveal from="left" className="space-y-4 leading-relaxed text-muted-foreground sm:text-lg">
           <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">எங்கள் கதை</h2>
           <p>
-            புதுக்கோட்டை சாந்தநாதபுரம், ஜி.எச். ரோட்டில், தண்டாயுதபாணி கோவில் எதிரில், பழனியப்பா மெஸ் அருகில் அமைந்துள்ள எங்கள் {store.type_ta}{' '}
+            புதுக்கோட்டை ஜி.எச். ரோட்டில், தண்டாயுதபாணி கோவில் எதிரில், பழனியப்பா மெஸ் அருகில் அமைந்துள்ள எங்கள் {store.type_ta}{' '}
             கடந்த {store.years} ஆண்டுகளாக இப்பகுதி மக்களுக்குச் சேவை செய்து வருகிறது.
           </p>
           <p>
