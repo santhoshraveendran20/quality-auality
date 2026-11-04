@@ -4,12 +4,14 @@ import { CheckCircle2, MessageCirclePlus, Send, Star, XIcon } from 'lucide-react
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { fill, useT } from '@/i18n';
 
 const MAX = 300;
-const RATING_WORDS = ['', 'பரவாயில்லை', 'சுமார்', 'நன்று', 'மிக நன்று', 'அருமை!'];
 
 /** "Share your review" dialog. `onSubmit` receives { name, place, rating, text }. */
 export default function ReviewForm({ onSubmit }) {
+  const t = useT();
+  const r = t.reviews;
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [name, setName] = useState('');
@@ -47,13 +49,13 @@ export default function ReviewForm({ onSubmit }) {
       <Dialog.Trigger asChild>
         <Button size="lg" className="rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-lg shadow-amber-500/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl">
           <MessageCirclePlus />
-          உங்கள் கருத்தைப் பகிருங்கள்
+          {r.share}
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
         <Dialog.Content className="fixed left-1/2 top-1/2 z-50 max-h-[92vh] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border bg-background p-6 shadow-2xl data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
-          <Dialog.Close className="absolute right-4 top-4 rounded-full p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="மூடு">
+          <Dialog.Close className="absolute right-4 top-4 rounded-full p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label={t.close}>
             <XIcon className="size-5" />
           </Dialog.Close>
 
@@ -62,25 +64,25 @@ export default function ReviewForm({ onSubmit }) {
               <span className="mx-auto grid size-14 place-items-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
                 <CheckCircle2 className="size-8" />
               </span>
-              <Dialog.Title className="mt-4 text-xl font-semibold">நன்றி, {name.trim()}!</Dialog.Title>
+              <Dialog.Title className="mt-4 text-xl font-semibold">{fill(r.thanks, { name: name.trim() })}</Dialog.Title>
               <Dialog.Description className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                உங்கள் கருத்து வாடிக்கையாளர் கருத்துகளில் சேர்க்கப்பட்டது.
+                {r.added}
               </Dialog.Description>
               <Dialog.Close asChild>
-                <Button className="mt-6 w-full">பார்க்க</Button>
+                <Button className="mt-6 w-full">{r.view}</Button>
               </Dialog.Close>
             </div>
           ) : (
             <form onSubmit={submit} className="space-y-4">
               <div className="pr-8">
-                <Dialog.Title className="text-xl font-semibold">உங்கள் கருத்தைப் பகிருங்கள்</Dialog.Title>
+                <Dialog.Title className="text-xl font-semibold">{r.share}</Dialog.Title>
                 <Dialog.Description className="mt-1 text-sm text-muted-foreground">
-                  எங்கள் கடையைப் பற்றிய உங்கள் அனுபவத்தைச் சொல்லுங்கள்.
+                  {r.formText}
                 </Dialog.Description>
               </div>
 
               <fieldset>
-                <legend className="mb-2 text-sm font-medium">மதிப்பீடு</legend>
+                <legend className="mb-2 text-sm font-medium">{r.rating}</legend>
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1" onMouseLeave={() => setHover(0)}>
                     {[1, 2, 3, 4, 5].map((n) => (
@@ -97,24 +99,25 @@ export default function ReviewForm({ onSubmit }) {
                       </button>
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-gold-foreground dark:text-gold">{RATING_WORDS[shown]}</span>
+                  <span className="text-sm font-medium text-gold-foreground dark:text-gold">{r.ratingWords[shown]}</span>
                 </div>
               </fieldset>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block space-y-1.5">
-                  <span className="text-sm font-medium">உங்கள் பெயர் *</span>
+                  <span className="text-sm font-medium">{r.name}</span>
                   <Input value={name} onChange={(e) => setName(e.target.value)} maxLength={40} required autoComplete="name" />
                 </label>
                 <label className="block space-y-1.5">
-                  <span className="text-sm font-medium">ஊர் / பகுதி</span>
-                  <Input value={place} onChange={(e) => setPlace(e.target.value)} maxLength={40} placeholder="புதுக்கோட்டை" />
+                  <span className="text-sm font-medium">{r.place}</span>
+                  <Input value={place} onChange={(e) => setPlace(e.target.value)} maxLength={40} placeholder={r.placePlaceholder} />
                 </label>
               </div>
 
               <label className="block space-y-1.5">
                 <span className="flex justify-between text-sm font-medium">
-                  உங்கள் கருத்து *<span className="font-normal text-muted-foreground">{text.length}/{MAX}</span>
+                  {r.review}
+                  <span className="font-normal text-muted-foreground">{text.length}/{MAX}</span>
                 </span>
                 <textarea
                   value={text}
@@ -122,14 +125,14 @@ export default function ReviewForm({ onSubmit }) {
                   rows={4}
                   required
                   minLength={10}
-                  placeholder="எங்கள் பொருட்கள், விலை, சேவை பற்றி…"
+                  placeholder={r.reviewPlaceholder}
                   className="w-full resize-none rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow] placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 dark:bg-input/30"
                 />
               </label>
 
               <Button type="submit" size="lg" disabled={!valid} className="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-95">
                 <Send />
-                கருத்தைச் சேர்
+                {r.submit}
               </Button>
             </form>
           )}

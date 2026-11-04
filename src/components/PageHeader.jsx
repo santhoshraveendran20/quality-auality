@@ -9,9 +9,10 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import Reveal from '@/components/Reveal';
-import ta from '@/i18n/ta.json';
+import { useT } from '@/i18n';
 
 export default function PageHeader({ title, description, crumbs = [], children }) {
+  const ta = useT();
   return (
     <section className="relative overflow-hidden border-b bg-muted/30">
       <div aria-hidden="true" className="bg-grid absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />

@@ -1,14 +1,14 @@
 import { Link } from 'react-router';
 import { MessageCircle, Navigation, Phone } from 'lucide-react';
 import { directionsUrl, telHref, waHref } from '@/lib/store';
-import ta from '@/i18n/ta.json';
+import { useT } from '@/i18n';
 
 export const ACTION_ICONS = { call: Phone, whatsapp: MessageCircle, directions: Navigation };
 
 const ACTIONS = {
-  call: { label: ta.actions.call, href: () => telHref() },
-  whatsapp: { label: ta.actions.whatsapp, href: (message) => waHref(message) },
-  directions: { label: ta.actions.directions, href: () => directionsUrl() },
+  call: (t) => ({ label: t.actions.call, href: () => telHref() }),
+  whatsapp: (t) => ({ label: t.actions.whatsapp, href: (message) => waHref(message ?? t.whatsappGreeting) }),
+  directions: (t) => ({ label: t.actions.directions, href: () => directionsUrl() }),
 };
 
 /**
@@ -17,8 +17,9 @@ const ACTIONS = {
  * Extra props are forwarded, so it is styled with <Button asChild>.
  */
 export default function ActionLink({ kind, message, iconClassName, children, ...props }) {
+  const t = useT();
   const Icon = ACTION_ICONS[kind];
-  const { label, href } = ACTIONS[kind];
+  const { label, href } = ACTIONS[kind](t);
   const url = href(message);
   const content = (
     <>

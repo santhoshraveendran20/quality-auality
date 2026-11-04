@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getOpenStatus } from '../lib/hours';
+import { useLang } from '../i18n';
 
 export default function useOpenStatus() {
-  const [status, setStatus] = useState(() => getOpenStatus());
+  const { lang } = useLang();
+  const [now, setNow] = useState(() => new Date());
   useEffect(() => {
-    const id = setInterval(() => setStatus(getOpenStatus()), 30_000);
+    const id = setInterval(() => setNow(new Date()), 30_000);
     return () => clearInterval(id);
   }, []);
-  return status;
+  return getOpenStatus(now, lang);
 }

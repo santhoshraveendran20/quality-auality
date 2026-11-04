@@ -2,12 +2,13 @@ import { ShoppingBasket } from 'lucide-react';
 import { CATEGORY_COLORS, CATEGORY_ICONS } from '@/components/CategoryIcon';
 import ActionLink from '@/components/ActionLink';
 import { cn } from '@/lib/utils';
-import ta from '@/i18n/ta.json';
+import { fill, useLang } from '@/i18n';
 
 // Same --tone theming as CategoryGrid: the card sets its category colour, the classes tint from it.
 const toneText = 'text-(--tone) dark:text-[color-mix(in_oklch,var(--tone)_55%,white)]';
 
 export default function ProductCard({ product }) {
+  const { t: ta, pick, pickOther, size } = useLang();
   const { name_ta, name_en, sizes = [], price, inStock, category } = product;
   const Icon = CATEGORY_ICONS[category] ?? ShoppingBasket;
   return (
@@ -45,17 +46,17 @@ export default function ProductCard({ product }) {
         </span>
       </div>
 
-      <h3 className="relative mt-4 text-[15px] font-semibold leading-snug">{name_ta}</h3>
-      <p className={`relative mt-0.5 text-xs font-medium ${toneText}`}>{name_en}</p>
+      <h3 className="relative mt-4 text-[15px] font-semibold leading-snug">{pick(product, 'name')}</h3>
+      <p className={`relative mt-0.5 text-xs font-medium ${toneText}`}>{pickOther(product, 'name')}</p>
 
       {sizes.length > 0 && (
-        <ul className="relative mt-3 flex flex-wrap gap-1.5" aria-label="அளவுகள்">
+        <ul className="relative mt-3 flex flex-wrap gap-1.5" aria-label={ta.sizes}>
           {sizes.map((s) => (
             <li
               key={s}
               className="rounded-full border border-[color-mix(in_oklch,var(--tone)_25%,transparent)] bg-background/70 px-2.5 py-0.5 text-xs text-muted-foreground transition-colors group-hover:border-[color-mix(in_oklch,var(--tone)_45%,transparent)]"
             >
-              {s}
+              {size(s)}
             </li>
           ))}
         </ul>
@@ -65,7 +66,7 @@ export default function ProductCard({ product }) {
         <p className={cn('text-sm font-bold', price ? toneText : 'text-foreground')}>{price ? `₹${price}` : ta.askPrice}</p>
         <ActionLink
           kind="whatsapp"
-          message={`வணக்கம்! ${name_ta} (${name_en}) கிடைக்குமா? விலை என்ன?`}
+          message={fill(ta.askProduct, { name: `${name_ta} (${name_en})` })}
           iconClassName="size-4 text-emerald-600 transition-colors group-hover/btn:text-white dark:text-emerald-400"
           className="group/btn inline-flex h-9 w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-background/80 text-sm font-medium transition-all duration-300 hover:border-transparent hover:bg-emerald-600 hover:text-white hover:shadow-lg hover:shadow-emerald-600/30 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
         >

@@ -1,5 +1,4 @@
 import store from '../data/store.json';
-import ta from '../i18n/ta.json';
 
 const digits = (value) => (value || '').replace(/\D/g, '');
 
@@ -17,8 +16,8 @@ export const phones = [store.phone, store.phone2].filter((n) => digits(n).length
 
 export const telHref = (value = store.phone) => (digits(value).length >= 10 ? `tel:+${intl(value)}` : null);
 
-export const waHref = (message = ta.whatsappGreeting) =>
-  hasWhatsApp ? `https://wa.me/${intl(store.whatsapp)}?text=${encodeURIComponent(message)}` : null;
+export const waHref = (message = '') =>
+  hasWhatsApp ? `https://wa.me/${intl(store.whatsapp)}${message ? `?text=${encodeURIComponent(message)}` : ''}` : null;
 
 export const directionsUrl = () =>
   store.mapsPlaceUrl ||
@@ -29,7 +28,7 @@ export const mapEmbedUrl = () =>
 
 export const addressEn = () => {
   const a = store.address_en;
-  return `${a.street}, ${a.city} – ${a.pincode}, ${a.state}`;
+  return `${a.line1}, ${a.line2}, ${a.city} – ${a.pincode}, ${a.state}`;
 };
 
 export const displayPhone = (value) => {

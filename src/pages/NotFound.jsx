@@ -2,9 +2,10 @@ import { Link } from 'react-router';
 import { ArrowLeft, SearchX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import usePageTitle from '@/hooks/usePageTitle';
-import ta from '@/i18n/ta.json';
+import { useT } from '@/i18n';
 
 export default function NotFound() {
+  const ta = useT();
   usePageTitle(ta.notFoundTitle);
   return (
     <section className="container-x grid min-h-[60vh] place-items-center py-20 text-center">

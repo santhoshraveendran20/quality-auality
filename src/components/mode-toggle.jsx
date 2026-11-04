@@ -2,9 +2,10 @@ import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/theme-provider';
-import ta from '@/i18n/ta.json';
+import { useT } from '@/i18n';
 
 export function ModeToggle({ className }) {
+  const ta = useT();
   const { resolvedTheme, setTheme } = useTheme();
   const dark = resolvedTheme === 'dark';
   return (

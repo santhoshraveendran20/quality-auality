@@ -2,12 +2,14 @@ import { Link } from 'react-router';
 import { Clock, MapPin, Phone } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import Logo from '@/components/Logo';
-import { NAV } from '@/components/Header';
+import { useNav } from '@/components/Header';
 import { addressEn, displayPhone, phones, store, telHref } from '@/lib/store';
 import { hoursText } from '@/lib/hours';
-import ta from '@/i18n/ta.json';
+import { useLang } from '@/i18n';
 
 export default function Footer() {
+  const { lang, t: ta, pick } = useLang();
+  const NAV = useNav();
   const a = store.address_ta;
   return (
     <footer className="border-t bg-muted/40">
@@ -16,15 +18,15 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Logo alt="" className="w-24" />
             <div className="leading-tight">
-              <p className="text-lg font-semibold">{store.name_ta}</p>
-              <p className="text-sm text-muted-foreground">{store.type_ta}</p>
+              <p className="text-lg font-semibold">{pick(store, 'name')}</p>
+              <p className="text-sm text-muted-foreground">{pick(store, 'type')}</p>
             </div>
           </div>
-          <p className="mt-4 max-w-xs text-sm text-muted-foreground">{store.tagline_ta}</p>
+          <p className="mt-4 max-w-xs text-sm text-muted-foreground">{pick(store, 'tagline')}</p>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold">பக்கங்கள்</h2>
+          <h2 className="text-sm font-semibold">{ta.footerPages}</h2>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm md:grid-cols-1">
             {NAV.map((item) => (
               <li key={item.to}>
@@ -40,14 +42,18 @@ export default function Footer() {
           <h2 className="font-semibold">{ta.nav.contact}</h2>
           <p className="flex gap-2 text-muted-foreground">
             <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-            <span>
-              {a.line1}, {a.line2}, {a.city}
-              <span className="mt-1 block text-xs">{addressEn()}</span>
-            </span>
+            {lang === 'ta' ? (
+              <span>
+                {a.line1}, {a.line2}, {a.city}
+                <span className="mt-1 block text-xs">{addressEn()}</span>
+              </span>
+            ) : (
+              <span>{addressEn()}</span>
+            )}
           </p>
           <p className="flex gap-2 text-muted-foreground">
             <Clock aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-            {hoursText()}
+            {hoursText(lang)}
           </p>
           {phones.map((n) => (
             <a key={n} href={telHref(n)} className="flex gap-2 font-medium" data-track="call">
@@ -59,7 +65,7 @@ export default function Footer() {
       </div>
       <Separator />
       <p className="container-x py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} {store.name_ta} · {ta.footerTagline}
+        © {new Date().getFullYear()} {pick(store, 'name')} · {ta.footerTagline}
       </p>
     </footer>
   );

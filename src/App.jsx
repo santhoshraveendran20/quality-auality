@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { ThemeProvider } from '@/components/theme-provider';
+import { LanguageProvider, useT } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileActionBar from '@/components/MobileActionBar';
@@ -13,17 +14,25 @@ import Offers from '@/pages/Offers';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 
+function SkipLink() {
+  const t = useT();
+  return (
+    <a
+      href="#main"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+    >
+      {t.skipToContent}
+    </a>
+  );
+}
+
 export default function App() {
   return (
     <ThemeProvider>
+      <LanguageProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-        >
-          முக்கிய உள்ளடக்கத்திற்குச் செல்ல
-        </a>
+        <SkipLink />
         <Header />
         <main id="main" className="overflow-x-clip">
           <Routes>
@@ -42,6 +51,7 @@ export default function App() {
         <MobileActionBar />
         <FloatingWhatsApp />
       </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

@@ -8,31 +8,41 @@ import Logo from '@/components/Logo';
 import OpenBadge from '@/components/OpenBadge';
 import ActionLink from '@/components/ActionLink';
 import { ModeToggle } from '@/components/mode-toggle';
+import LanguageToggle from '@/components/LanguageToggle';
 import { cn } from '@/lib/utils';
 import store from '@/data/store.json';
-import ta from '@/i18n/ta.json';
+import { useLang } from '@/i18n';
 
-export const NAV = [
-  { to: '/', label: ta.nav.home, end: true },
-  { to: '/about', label: ta.nav.about },
-  { to: '/products', label: ta.nav.products },
-  { to: '/offers', label: ta.nav.offers },
-  { to: '/contact', label: ta.nav.contact },
-];
+/** Main navigation links in the current language. */
+export function useNav() {
+  const { t } = useLang();
+  return [
+    { to: '/', label: t.nav.home, end: true },
+    { to: '/about', label: t.nav.about },
+    { to: '/products', label: t.nav.products },
+    { to: '/offers', label: t.nav.offers },
+    { to: '/contact', label: t.nav.contact },
+  ];
+}
 
 function Brand() {
+  const { t, pick } = useLang();
   return (
-    <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label={`${store.name_ta} – ${ta.nav.home}`}>
+    <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label={`${pick(store, 'name')} – ${t.nav.home}`}>
       <Logo size="sm" alt="" className="w-16" />
       <span className="min-w-0 leading-tight">
-        <span className="block truncate text-[15px] font-semibold sm:text-base">{store.name_ta}</span>
-        <span className="block truncate text-xs text-muted-foreground">{store.type_ta} · புதுக்கோட்டை</span>
+        <span className="block truncate text-[15px] font-semibold sm:text-base">{pick(store, 'name')}</span>
+        <span className="block truncate text-xs text-muted-foreground">
+          {pick(store, 'type')} · {t.city}
+        </span>
       </span>
     </Link>
   );
 }
 
 export default function Header() {
+  const { t: ta, pick } = useLang();
+  const NAV = useNav();
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -45,7 +55,7 @@ export default function Header() {
       <div className="container-x flex h-16 items-center justify-between gap-3">
         <Brand />
 
-        <nav aria-label="முதன்மை" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label={ta.mainNav} className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => (
             <NavLink
               key={item.to}
@@ -64,6 +74,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-1.5">
+          <LanguageToggle />
           <ModeToggle />
           <Button asChild size="sm" className="hidden md:inline-flex">
             <ActionLink kind="call" />
@@ -78,11 +89,13 @@ export default function Header() {
               <SheetHeader className="flex-row items-center gap-3 border-b pr-12">
                 <Logo size="sm" alt="" className="w-16" />
                 <div className="min-w-0">
-                  <SheetTitle className="truncate">{store.name_ta}</SheetTitle>
-                  <SheetDescription className="truncate">{store.type_ta} · புதுக்கோட்டை</SheetDescription>
+                  <SheetTitle className="truncate">{pick(store, 'name')}</SheetTitle>
+                  <SheetDescription className="truncate">
+                    {pick(store, 'type')} · {ta.city}
+                  </SheetDescription>
                 </div>
               </SheetHeader>
-              <nav aria-label="மொபைல் மெனு" className="flex flex-col gap-1 p-4">
+              <nav aria-label={ta.mobileNav} className="flex flex-col gap-1 p-4">
                 {NAV.map((item) => (
                   <NavLink
                     key={item.to}

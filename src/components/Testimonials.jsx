@@ -4,6 +4,7 @@ import Reveal from '@/components/Reveal';
 import ReviewForm from '@/components/ReviewForm';
 import { cn } from '@/lib/utils';
 import useReviews from '@/hooks/useReviews';
+import { useT } from '@/i18n';
 
 const AVATAR_TONES = [
   'from-emerald-500 to-green-700',
@@ -80,6 +81,7 @@ function MarqueeRow({ items, reverse = false, offset = 0 }) {
 }
 
 export default function Testimonials() {
+  const t = useT();
   const { reviews, addReview } = useReviews();
   const half = Math.ceil(reviews.length / 2);
   return (
@@ -87,10 +89,10 @@ export default function Testimonials() {
       <div aria-hidden="true" className="absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
       <Reveal className="container-x relative">
         <SectionHeading
-          eyebrow="வாடிக்கையாளர் கருத்துகள்"
+          eyebrow={t.reviews.eyebrow}
           icon={MessageSquareHeart}
-          title="எங்கள் வாடிக்கையாளர்கள் சொல்வது"
-          description="புதுக்கோட்டை மக்களின் அன்பும் நம்பிக்கையுமே எங்கள் பலம்."
+          title={t.reviews.title}
+          description={t.reviews.text}
         />
         <div className="mt-6 flex justify-center">
           <ReviewForm onSubmit={addReview} />
@@ -103,8 +105,8 @@ export default function Testimonials() {
             <span className="grid size-14 place-items-center rounded-full bg-gold/15 text-gold-foreground dark:text-gold">
               <Quote aria-hidden="true" className="size-7" />
             </span>
-            <p className="mt-4 text-lg font-semibold">இன்னும் கருத்துகள் இல்லை</p>
-            <p className="mt-1 text-sm text-muted-foreground">உங்கள் அனுபவத்தை முதலில் பகிர்ந்துகொள்ளுங்கள்!</p>
+            <p className="mt-4 text-lg font-semibold">{t.reviews.emptyTitle}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{t.reviews.emptyText}</p>
           </div>
         </div>
       ) : reviews.length < 4 ? (

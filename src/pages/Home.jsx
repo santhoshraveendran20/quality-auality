@@ -21,7 +21,8 @@ import { Separator } from '@/components/ui/separator';
 import AnniversaryBadge from '@/components/AnniversaryBadge';
 import OpenBadge from '@/components/OpenBadge';
 import Tilt3D from '@/components/Tilt3D';
-import Reveal from '@/components/Reveal';import ActionLink from '@/components/ActionLink';
+import Reveal from '@/components/Reveal';
+import ActionLink from '@/components/ActionLink';
 import SectionHeading from '@/components/SectionHeading';
 import CategoryGrid from '@/components/CategoryGrid';
 import OfferCard from '@/components/OfferCard';
@@ -30,17 +31,19 @@ import VisitCard from '@/components/VisitCard';
 import Testimonials from '@/components/Testimonials';
 import usePageTitle from '@/hooks/usePageTitle';
 import { activeOffers } from '@/lib/offers';
-import { formatTamilTime, hoursText } from '@/lib/hours';
+import { formatClock, hoursText } from '@/lib/hours';
+import { fill, useLang } from '@/i18n';
 import store from '@/data/store.json';
 import categories from '@/data/categories.json';
 import products from '@/data/products.json';
-import ta from '@/i18n/ta.json';
 
 const SIDES = ['left', 'up', 'right'];
 
 function StoreName() {
-  const parts = store.name_ta.split(' & ');
-  if (parts.length !== 2) return store.name_ta;
+  const { pick } = useLang();
+  const name = pick(store, 'name');
+  const parts = name.split(' & ');
+  if (parts.length !== 2) return name;
   return (
     <>
       {parts[0]} <span className="text-gold">&amp;</span> {parts[1]}
@@ -49,10 +52,11 @@ function StoreName() {
 }
 
 function Hero() {
+  const { t, pick } = useLang();
   const stats = [
-    { icon: Award, value: `${store.years}+`, label: 'ஆண்டுகள் சேவை' },
-    { icon: LayoutGrid, value: categories.length, label: 'பொருள் வகைகள்' },
-    { icon: Moon, value: formatTamilTime(store.hours.close).split(' ')[1], label: 'இரவு வரை திறந்திருக்கும்' },
+    { icon: Award, value: `${store.years}+`, label: t.stats.years },
+    { icon: LayoutGrid, value: categories.length, label: t.stats.categories },
+    { icon: Moon, value: formatClock(store.hours.close), label: t.stats.openTill },
   ];
   return (
     <section className="relative overflow-hidden border-b">
@@ -63,14 +67,14 @@ function Hero() {
             <OpenBadge />
             <Badge variant="outline" className="h-7 rounded-full bg-background/60 px-3 text-[13px]">
               <Sparkles className="text-gold" />
-              {store.years} ஆண்டு நிறைவு
+              {fill(t.home.anniversaryBadge, { years: store.years })}
             </Badge>
           </div>
           <h1 className="mt-6 text-balance py-1 font-display text-5xl font-bold leading-[1.2] sm:text-6xl lg:text-[4.25rem]">
             <StoreName />
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-balance text-lg text-muted-foreground lg:mx-0">
-            {store.type_ta} · {store.tagline_ta}. ஆவின் பால் முதல் மளிகை வரை — அனைத்தும் ஒரே இடத்தில்.
+            {pick(store, 'type')} · {pick(store, 'tagline')}. {t.home.heroText}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <Button
@@ -87,7 +91,7 @@ function Hero() {
               className="border-emerald-500/40 bg-background/70 backdrop-blur transition-transform hover:-translate-y-0.5"
             >
               <ActionLink kind="whatsapp" iconClassName="text-emerald-600 dark:text-emerald-400">
-                {ta.actions.whatsappOrder}
+                {t.actions.whatsappOrder}
               </ActionLink>
             </Button>
             <Button asChild size="xl" variant="ghost">
@@ -109,22 +113,22 @@ function Hero() {
         </Reveal>
 
         <Reveal from="right" delay={150}>
-        <Tilt3D className="relative mx-auto w-full max-w-sm lg:max-w-[26rem]">
-          {/* Gold glow and a tilted frame behind the banner, pushed back in 3D space */}
-          <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle_at_30%_20%,color-mix(in_oklch,var(--gold)_40%,transparent),transparent_60%),radial-gradient(circle_at_80%_90%,color-mix(in_oklch,var(--primary)_30%,transparent),transparent_55%)] blur-2xl" />
-          <div aria-hidden="true" className="absolute inset-0 rounded-3xl border-2 border-gold/50 [transform:translate3d(16px,16px,-50px)_rotate(3deg)]" />
-          <picture className="relative block overflow-hidden rounded-3xl shadow-2xl shadow-black/30 ring-1 ring-gold/50">
-            <source srcSet="/images/banner.webp" type="image/webp" />
-            <img
-              src="/images/banner.jpg"
-              alt={`${store.name_ta} டிபார்ட்மெண்டல் ஸ்டோர் — பால், குளிர் பானங்கள், மளிகை, பழங்கள், வீட்டுப் பொருட்கள்`}
-              width="1080"
-              height="1446"
-              fetchPriority="high"
-              className="w-full"
-            />
-          </picture>
-        </Tilt3D>
+          <Tilt3D className="relative mx-auto w-full max-w-sm lg:max-w-[26rem]">
+            {/* Gold glow and a tilted frame behind the banner, pushed back in 3D space */}
+            <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle_at_30%_20%,color-mix(in_oklch,var(--gold)_40%,transparent),transparent_60%),radial-gradient(circle_at_80%_90%,color-mix(in_oklch,var(--primary)_30%,transparent),transparent_55%)] blur-2xl" />
+            <div aria-hidden="true" className="absolute inset-0 rounded-3xl border-2 border-gold/50 [transform:translate3d(16px,16px,-50px)_rotate(3deg)]" />
+            <picture className="relative block overflow-hidden rounded-3xl shadow-2xl shadow-black/30 ring-1 ring-gold/50">
+              <source srcSet="/images/banner.webp" type="image/webp" />
+              <img
+                src="/images/banner.jpg"
+                alt={fill(t.home.bannerAlt, { name: pick(store, 'name') })}
+                width="1080"
+                height="1446"
+                fetchPriority="high"
+                className="w-full"
+              />
+            </picture>
+          </Tilt3D>
         </Reveal>
       </div>
     </section>
@@ -132,17 +136,14 @@ function Hero() {
 }
 
 function Features() {
+  const { lang, t } = useLang();
+  const line2 = lang === 'en' ? store.address_en.line2 : store.address_ta.line2;
   const items = [
-    { icon: MapPin, title: ta.landmark, text: `${store.address_ta.line2}, புதுக்கோட்டை – 622001` },
-    { icon: Clock, title: ta.hours, text: hoursText() },
-    { icon: BadgeCheck, title: 'தரமான பொருட்கள்', text: 'நம்பகமான பிராண்டுகள் · நியாயமான விலை' },
-    {
-      icon: PartyPopper,
-      title: 'திருமண ஆர்டர்கள் ஏற்கப்படும்',
-      text: 'திருமணம் மற்றும் விசேஷங்களுக்கான மொத்த ஆர்டர்கள் — 24 மணி நேரமும் ஆர்டர் செய்யலாம், டெலிவரியும் செய்து தரப்படும்',
-      badge: '24 மணி நேரம்',
-    },
-    { icon: Truck, title: 'வீட்டுக்கே டெலிவரி', text: '₹1000-க்கு மேல் வாங்கினால் வீட்டுக்கே டெலிவரி செய்யப்படும்' },
+    { icon: MapPin, title: t.landmark, text: `${line2}, ${t.city} – ${store.address_en.pincode}` },
+    { icon: Clock, title: t.hours, text: hoursText(lang) },
+    { icon: BadgeCheck, title: t.values.quality, text: t.home.qualityText },
+    { icon: PartyPopper, title: t.home.weddingTitle, text: t.home.weddingText, badge: t.home.weddingBadge },
+    { icon: Truck, title: t.home.deliveryTitle, text: t.home.deliveryText },
   ];
   return (
     <section className="container-x py-12">
@@ -151,7 +152,7 @@ function Features() {
         {items.map(({ icon: Icon, title, text, badge }, i) => (
           <Reveal
             as="li"
-            key={title}
+            key={i}
             from={SIDES[i % 3]}
             delay={(i % 3) * 100}
             className={i < 3 ? 'lg:col-span-2' : i === items.length - 1 ? 'md:col-span-2 lg:col-span-3' : 'lg:col-span-3'}
@@ -183,87 +184,86 @@ function Features() {
 }
 
 function Highlights() {
+  const { t, pick } = useLang();
   const aavin = products.filter((p) => p.category === 'aavin');
   const drinks = products.filter((p) => p.category === 'cold-drinks');
   return (
     <section className="container-x py-12 sm:py-16">
-      <SectionHeading eyebrow="எங்கள் சிறப்பு" icon={Sparkles} title="ஆவின் பால் & குளிர் பானங்கள்" description="தினசரி தேவைக்கும், வெயில் காலக் குளிர்ச்சிக்கும் — ஒரே இடத்தில்." />
+      <SectionHeading eyebrow={t.home.specialEyebrow} icon={Sparkles} title={t.home.specialTitle} description={t.home.specialText} />
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <Reveal from="left" className="flex">
-        <Card className="w-full overflow-hidden pt-0">
-          {/* Same 16:7 header height as the drinks photo card beside it */}
-          <div className="grid aspect-[16/7] place-items-center bg-gradient-to-br from-sky-50 via-white to-lime-50 p-6 dark:from-sky-950/40 dark:via-card dark:to-lime-950/30">
-            <img
-              src="/images/aavin-logo.webp"
-              alt="Aavin"
-              width="600"
-              height="298"
-              loading="lazy"
-              className="h-full max-h-36 w-auto object-contain drop-shadow-md transition-transform duration-500 hover:scale-105"
-            />
-          </div>
-          <CardHeader>
-            <CardTitle className="text-xl">ஆவின் பால் பொருட்கள்</CardTitle>
-            <CardDescription className="text-[15px]">
-              பால், தயிர், நெய், வெண்ணெய், பன்னீர், மோர், ஐஸ்கிரீம் — அனைத்தும் இங்கு கிடைக்கும்.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="flex flex-wrap gap-2">
-              {aavin.map((p) => (
-                <li key={p.id}>
-                  <Badge variant="secondary" className="px-2.5 py-1 text-[13px] font-normal">
-                    {p.name_ta.replace('ஆவின் ', '')}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-          <CardFooter className="mt-auto">
-            <Button asChild>
-              <Link to="/products/aavin">
-                ஆவின் பொருட்கள்
-                <ArrowRight />
-              </Link>
-            </Button>
-          </CardFooter>
-        </Card>
+          <Card className="w-full overflow-hidden pt-0">
+            {/* Same 16:7 header height as the drinks photo card beside it */}
+            <div className="grid aspect-[16/7] place-items-center bg-gradient-to-br from-sky-50 via-white to-lime-50 p-6 dark:from-sky-950/40 dark:via-card dark:to-lime-950/30">
+              <img
+                src="/images/aavin-logo.webp"
+                alt="Aavin"
+                width="600"
+                height="298"
+                loading="lazy"
+                className="h-full max-h-36 w-auto object-contain drop-shadow-md transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <CardHeader>
+              <CardTitle className="text-xl">{t.home.aavinTitle}</CardTitle>
+              <CardDescription className="text-[15px]">{t.home.aavinText}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="flex flex-wrap gap-2">
+                {aavin.map((p) => (
+                  <li key={p.id}>
+                    <Badge variant="secondary" className="px-2.5 py-1 text-[13px] font-normal">
+                      {pick(p, 'name').replace(t.home.aavinPrefix, '')}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter className="mt-auto">
+              <Button asChild>
+                <Link to="/products/aavin">
+                  {t.home.aavinButton}
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
         </Reveal>
 
         <Reveal from="right" delay={120} className="flex">
-        <Card className="w-full overflow-hidden pt-0">
-          <img
-            src="/images/juices.webp"
-            alt="குளிர் பானங்கள்"
-            width="680"
-            height="720"
-            loading="lazy"
-            className="aspect-[16/7] w-full object-cover"
-          />
-          <CardHeader>
-            <CardTitle className="text-xl">குளிர் பானங்கள்</CardTitle>
-            <CardDescription className="text-[15px]">குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள் — எப்போதும் சில்லென்று.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="flex flex-wrap gap-2">
-              {drinks.map((p) => (
-                <li key={p.id}>
-                  <Badge variant="outline" className="px-2.5 py-1 text-[13px] font-normal">
-                    {p.name_en}
-                  </Badge>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-          <CardFooter className="mt-auto gap-2">
-            <Button asChild>
-              <Link to="/products/cold-drinks">
-                குளிர் பானங்கள்
-                <ArrowRight />
-              </Link>
-            </Button>
-          </CardFooter>
-        </Card>
+          <Card className="w-full overflow-hidden pt-0">
+            <img
+              src="/images/juices.webp"
+              alt={t.home.drinksTitle}
+              width="680"
+              height="720"
+              loading="lazy"
+              className="aspect-[16/7] w-full object-cover"
+            />
+            <CardHeader>
+              <CardTitle className="text-xl">{t.home.drinksTitle}</CardTitle>
+              <CardDescription className="text-[15px]">{t.home.drinksText}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="flex flex-wrap gap-2">
+                {drinks.map((p) => (
+                  <li key={p.id}>
+                    <Badge variant="outline" className="px-2.5 py-1 text-[13px] font-normal">
+                      {p.name_en}
+                    </Badge>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter className="mt-auto gap-2">
+              <Button asChild>
+                <Link to="/products/cold-drinks">
+                  {t.home.drinksTitle}
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
         </Reveal>
       </div>
     </section>
@@ -271,10 +271,12 @@ function Highlights() {
 }
 
 function Anniversary() {
+  const { t } = useLang();
+  const years = store.years;
   const values = [
-    { icon: BadgeCheck, title: 'தரமான பொருட்கள்', text: 'நம்பகமான பிராண்டுகளின் தரமான பொருட்கள் மட்டுமே.' },
-    { icon: IndianRupee, title: 'நியாயமான விலை', text: 'அனைவருக்கும் ஏற்ற நியாயமான விலையில்.' },
-    { icon: HeartHandshake, title: 'அன்பான சேவை', text: `${store.years} ஆண்டுகளாக குடும்பம் போல் உங்களுடன்.` },
+    { icon: BadgeCheck, title: t.values.quality, text: t.home.trustQuality },
+    { icon: IndianRupee, title: t.values.price, text: t.home.trustPrice },
+    { icon: HeartHandshake, title: t.values.service, text: fill(t.home.trustService, { years }) },
   ];
   return (
     <section className="border-y bg-muted/40">
@@ -285,10 +287,10 @@ function Anniversary() {
         <Reveal from="right" delay={120}>
           <SectionHeading
             align="left"
-            eyebrow={`${store.years} ஆண்டு நிறைவு`}
+            eyebrow={fill(t.home.anniversaryBadge, { years })}
             icon={Sparkles}
-            title={`${store.years} ஆண்டுகால நம்பிக்கை`}
-            description="புதுக்கோட்டை மக்களின் அன்போடும் ஆதரவோடும் 25 ஆண்டுகளை நிறைவு செய்கிறோம். நன்றி!"
+            title={fill(t.home.trustTitle, { years })}
+            description={fill(t.home.trustText, { years })}
             className="text-center lg:text-left"
           />
           <Separator className="my-8" />
@@ -312,6 +314,7 @@ function Anniversary() {
 }
 
 export default function Home() {
+  const { t } = useLang();
   usePageTitle(null);
   const offers = activeOffers().slice(0, 3);
   return (
@@ -320,14 +323,14 @@ export default function Home() {
       <Features />
 
       <section className="container-x py-12 sm:py-16">
-        <SectionHeading eyebrow={ta.nav.products} icon={LayoutGrid} title="எங்கள் பொருட்கள்" description="உங்களுக்குத் தேவையான அனைத்தும் ஒரே இடத்தில்" />
+        <SectionHeading eyebrow={t.nav.products} icon={LayoutGrid} title={t.home.productsTitle} description={t.home.productsText} />
         <div className="mt-10">
           <CategoryGrid />
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" size="lg">
             <Link to="/products">
-              {ta.actions.viewAll}
+              {t.actions.viewAll}
               <ArrowRight />
             </Link>
           </Button>
@@ -339,7 +342,7 @@ export default function Home() {
 
       {offers.length > 0 && (
         <section className="container-x py-12 sm:py-16">
-          <SectionHeading eyebrow={ta.nav.offers} icon={Tag} title="சலுகைகள் & சிறப்புகள்" />
+          <SectionHeading eyebrow={t.nav.offers} icon={Tag} title={t.home.offersTitle} />
           <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {offers.map((o, i) => (
               <Reveal as="li" key={o.id} from={SIDES[i % 3]} delay={i * 100}>
@@ -354,7 +357,7 @@ export default function Home() {
 
       <section className="border-t bg-muted/30 py-12 sm:py-16">
         <div className="container-x">
-          <SectionHeading eyebrow={ta.nav.contact} icon={MapPin} title="எங்கள் கடைக்கு வாருங்கள்" description={ta.landmark} />
+          <SectionHeading eyebrow={t.nav.contact} icon={MapPin} title={t.home.visitTitle} description={t.landmark} />
           <div className="mt-10 grid gap-6 lg:grid-cols-5">
             <Reveal from="left" className="flex lg:col-span-3">
               <MapEmbed className="aspect-[4/3] w-full lg:aspect-auto" />

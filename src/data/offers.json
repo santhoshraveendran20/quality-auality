@@ -1,25 +1,34 @@
 [
   {
     "id": "aavin-daily",
-    "tag": "ஆவின்",
+    "tag_ta": "ஆவின்",
+    "tag_en": "Aavin",
     "title_ta": "தினசரி ஆவின் பால்",
+    "title_en": "Daily Aavin milk",
     "text_ta": "புதிய ஆவின் பால், தயிர், நெய், வெண்ணெய் தினமும் கிடைக்கும்.",
+    "text_en": "Fresh Aavin milk, curd, ghee and butter available every day.",
     "category": "aavin",
     "validUntil": null
   },
   {
     "id": "chilled-drinks",
-    "tag": "குளிர் பானங்கள்",
+    "tag_ta": "குளிர் பானங்கள்",
+    "tag_en": "Cold drinks",
     "title_ta": "எப்போதும் குளிர்ச்சியாக",
+    "title_en": "Always chilled",
     "text_ta": "முன்னணி குளிர் பானங்கள் அனைத்தும் குளிரூட்டப்பட்டுத் தயாராக உள்ளன.",
+    "text_en": "All leading cold drinks, chilled and ready.",
     "category": "cold-drinks",
     "validUntil": null
   },
   {
     "id": "monthly-list",
-    "tag": "மளிகை",
+    "tag_ta": "மளிகை",
+    "tag_en": "Groceries",
     "title_ta": "மாதாந்திர மளிகைப் பட்டியல்",
+    "title_en": "Monthly grocery list",
     "text_ta": "உங்கள் மளிகைப் பட்டியலை வாட்ஸ்அப்பில் அனுப்புங்கள்; கிடைக்கும் பொருட்களை உறுதி செய்கிறோம்.",
+    "text_en": "Send your grocery list on WhatsApp and we will confirm what is available.",
     "category": "groceries",
     "validUntil": null
   }

@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { Leaf, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import store from '@/data/store.json';
+import { useLang } from '@/i18n';
 
 /*
  * 25th-anniversary emblem drawn with lucide-react icons:
@@ -59,7 +60,9 @@ function Branch({ fill, stroke }) {
   );
 }
 
-export default function AnniversaryBadge({ className, label = 'ஆண்டு நிறைவு', title }) {
+export default function AnniversaryBadge({ className, label, title }) {
+  const { t } = useLang();
+  label ??= t.badge.label;
   const id = `ab${useId().replace(/[^a-zA-Z0-9]/g, '')}`;
   const gold = `url(#${id}-gold)`;
   const ink = '#8a6420';
@@ -122,7 +125,7 @@ export default function AnniversaryBadge({ className, label = 'ஆண்டு �
         {store.years}
       </text>
       <text x="274" y="124" fontFamily="'Noto Sans Tamil', sans-serif" fontWeight="700" fontSize="18" fill={`url(#${id}-num)`}>
-        ஆம்
+        {t.badge.ordinal}
       </text>
 
       {/* ribbon */}

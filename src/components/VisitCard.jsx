@@ -6,7 +6,7 @@ import OpenBadge from '@/components/OpenBadge';
 import ActionLink from '@/components/ActionLink';
 import { addressEn, displayPhone, phones, store, telHref } from '@/lib/store';
 import { hoursText } from '@/lib/hours';
-import ta from '@/i18n/ta.json';
+import { useLang } from '@/i18n';
 
 function Row({ icon: Icon, title, children }) {
   return (
@@ -23,28 +23,39 @@ function Row({ icon: Icon, title, children }) {
 }
 
 export default function VisitCard() {
+  const { lang, t: ta, pick } = useLang();
   const a = store.address_ta;
+  const e = store.address_en;
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-lg">{store.name_ta}</CardTitle>
-        <CardDescription>{store.type_ta} · புதுக்கோட்டை</CardDescription>
+        <CardTitle className="text-lg">{pick(store, 'name')}</CardTitle>
+        <CardDescription>
+          {pick(store, 'type')} · {ta.city}
+        </CardDescription>
         <OpenBadge className="mt-2" />
       </CardHeader>
       <CardContent className="space-y-4">
         <Row icon={MapPin} title={ta.address}>
-          <address className="not-italic">
-            <span className="block font-medium">{a.line1}</span>
-            {a.line2}, {a.city}, {a.state}
-            <span className="mt-1 block text-xs text-muted-foreground">{addressEn()}</span>
-          </address>
+          {lang === 'ta' ? (
+            <address className="not-italic">
+              <span className="block font-medium">{a.line1}</span>
+              {a.line2}, {a.city}, {a.state}
+              <span className="mt-1 block text-xs text-muted-foreground">{addressEn()}</span>
+            </address>
+          ) : (
+            <address className="not-italic">
+              <span className="block font-medium">{e.line1}</span>
+              {e.line2}, {e.city} – {e.pincode}, {e.state}
+            </address>
+          )}
         </Row>
         <Separator />
-        <Row icon={Landmark} title="அடையாளம்">
+        <Row icon={Landmark} title={ta.landmarkLabel}>
           {ta.landmark}
         </Row>
         <Row icon={Clock} title={ta.hours}>
-          {hoursText()}
+          {hoursText(lang)}
         </Row>
         <Row icon={Phone} title={ta.phone}>
           {phones.length ? (

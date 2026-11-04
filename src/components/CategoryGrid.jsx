@@ -4,7 +4,7 @@ import { CATEGORY_COLORS, CATEGORY_ICONS } from '@/components/CategoryIcon';
 import Reveal from '@/components/Reveal';
 import categories from '@/data/categories.json';
 import products from '@/data/products.json';
-import ta from '@/i18n/ta.json';
+import { useLang } from '@/i18n';
 
 const countFor = (slug) => products.filter((p) => p.category === slug).length;
 
@@ -12,6 +12,7 @@ const countFor = (slug) => products.filter((p) => p.category === slug).length;
 const toneText = 'text-(--tone) dark:text-[color-mix(in_oklch,var(--tone)_55%,white)]';
 
 export default function CategoryGrid() {
+  const { t: ta, pick, pickOther } = useLang();
   return (
     <ul className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
       {categories.map((c, i) => {
@@ -41,9 +42,9 @@ export default function CategoryGrid() {
                 <Icon aria-hidden="true" className="size-6" />
               </span>
 
-              <h3 className="relative mt-4 text-[15px] font-semibold leading-snug sm:text-base">{c.name_ta}</h3>
-              <p className={`relative mt-0.5 text-xs font-medium ${toneText}`}>{c.name_en}</p>
-              <p className="relative mt-3 hidden text-sm leading-relaxed text-muted-foreground sm:block">{c.desc_ta}</p>
+              <h3 className="relative mt-4 text-[15px] font-semibold leading-snug sm:text-base">{pick(c, 'name')}</h3>
+              <p className={`relative mt-0.5 text-xs font-medium ${toneText}`}>{pickOther(c, 'name')}</p>
+              <p className="relative mt-3 hidden text-sm leading-relaxed text-muted-foreground sm:block">{pick(c, 'desc')}</p>
 
               <div className="relative mt-auto flex items-center justify-between pt-5">
                 <span className={`inline-flex items-center gap-1.5 rounded-full bg-[color-mix(in_oklch,var(--tone)_12%,transparent)] px-2.5 py-1 text-xs font-semibold ${toneText}`}>

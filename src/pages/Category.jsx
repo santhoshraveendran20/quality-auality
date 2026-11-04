@@ -5,12 +5,13 @@ import CategoryIcon from '@/components/CategoryIcon';
 import usePageTitle from '@/hooks/usePageTitle';
 import NotFound from '@/pages/NotFound';
 import categories from '@/data/categories.json';
-import ta from '@/i18n/ta.json';
+import { useLang } from '@/i18n';
 
 export default function Category() {
+  const { t: ta, pick, pickOther } = useLang();
   const { slug } = useParams();
   const category = categories.find((c) => c.slug === slug);
-  usePageTitle(category?.name_ta ?? ta.notFoundTitle);
+  usePageTitle(category ? pick(category, 'name') : ta.notFoundTitle);
   if (!category) return <NotFound />;
   return (
     <>
@@ -18,11 +19,11 @@ export default function Category() {
         title={
           <span className="flex items-center gap-3">
             <CategoryIcon slug={category.slug} className="size-11" iconClassName="size-6" />
-            {category.name_ta}
+            {pick(category, 'name')}
           </span>
         }
-        description={`${category.name_en} · ${category.desc_ta}`}
-        crumbs={[{ label: ta.nav.products, to: '/products' }, { label: category.name_ta }]}
+        description={`${pickOther(category, 'name')} · ${pick(category, 'desc')}`}
+        crumbs={[{ label: ta.nav.products, to: '/products' }, { label: pick(category, 'name') }]}
       />
       <div className="container-x pb-16">
         <ProductBrowser key={category.slug} category={category} />

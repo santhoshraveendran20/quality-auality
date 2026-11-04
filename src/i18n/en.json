@@ -1,0 +1,167 @@
+{
+  "langName": "English",
+  "switchTo": "தமிழுக்கு மாற்று",
+  "city": "Pudukkottai",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "offers": "Offers",
+    "contact": "Contact"
+  },
+  "actions": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "whatsappOrder": "Order on WhatsApp",
+    "directions": "Directions",
+    "viewAll": "View all",
+    "ask": "Ask on WhatsApp"
+  },
+  "whatsappGreeting": "Hello! I would like to buy some items from your store.",
+  "askPrice": "Ask for price",
+  "inStock": "In stock",
+  "outOfStock": "Out of stock",
+  "searchLabel": "Search products",
+  "searchPlaceholder": "Search: milk, rice, Pepsi…",
+  "clearSearch": "Clear search",
+  "all": "All",
+  "items": "items",
+  "sizes": "Sizes",
+  "noResults": "No products found",
+  "noResultsHint": "Can't find what you're looking for? Ask us on WhatsApp — we'll tell you if it's available.",
+  "askAvailable": "Hello! Do you have \"{q}\"?",
+  "askProduct": "Hello! Do you have {name}? What is the price?",
+  "menu": "Menu",
+  "close": "Close",
+  "address": "Address",
+  "landmarkLabel": "Landmark",
+  "hours": "Store hours",
+  "phone": "Phone",
+  "landmark": "Opposite Dhandayudhapani Temple, near Palaniyappa Mess",
+  "phoneSoon": "Phone number coming soon",
+  "footerTagline": "Serving you for 25 years",
+  "footerPages": "Pages",
+  "notFoundTitle": "Page not found",
+  "backHome": "Back to home",
+  "toggleTheme": "Light / dark mode",
+  "priceNoteTitle": "Prices may vary",
+  "priceNoteText": "Call or WhatsApp us for the exact price.",
+  "skipToContent": "Skip to main content",
+  "mainNav": "Main",
+  "mobileNav": "Mobile menu",
+  "quickContact": "Quick contact",
+  "categoriesNav": "Product categories",
+  "mapTitle": "Store location – Google Maps",
+  "until": "Until {date}",
+
+  "time": {
+    "daily": "Daily",
+    "holiday": "closed",
+    "openNow": "Open now · until {time}",
+    "closedNow": "Closed now · opens {when} at {time}",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  },
+
+  "stats": {
+    "years": "Years of service",
+    "categories": "Product categories",
+    "openTill": "Open until night"
+  },
+
+  "values": {
+    "quality": "Quality products",
+    "price": "Fair prices",
+    "service": "Friendly service"
+  },
+
+  "home": {
+    "anniversaryBadge": "{years} years anniversary",
+    "heroText": "From Aavin milk to groceries — everything under one roof.",
+    "bannerAlt": "{name} Departmental Store — milk, cold drinks, groceries, fruits and household items",
+    "qualityText": "Trusted brands · Fair prices",
+    "weddingTitle": "Wedding orders accepted",
+    "weddingText": "Bulk orders for weddings and functions — order any time, 24 hours, with delivery too",
+    "weddingBadge": "24 hours",
+    "deliveryTitle": "Home delivery",
+    "deliveryText": "Home delivery for purchases above ₹1000",
+    "productsTitle": "Our products",
+    "productsText": "Everything you need, under one roof",
+    "specialEyebrow": "Our speciality",
+    "specialTitle": "Aavin milk & cold drinks",
+    "specialText": "For your daily needs and a cool summer — all in one place.",
+    "aavinTitle": "Aavin dairy products",
+    "aavinText": "Milk, curd, ghee, butter, paneer, buttermilk, ice cream — all available here.",
+    "aavinButton": "Aavin products",
+    "aavinPrefix": "Aavin ",
+    "drinksTitle": "Cold drinks",
+    "drinksText": "Leading cold drinks, always chilled.",
+    "trustTitle": "{years} years of trust",
+    "trustText": "With the love and support of the people of Pudukkottai, we complete {years} years. Thank you!",
+    "trustQuality": "Only quality products from trusted brands.",
+    "trustPrice": "Fair prices for everyone.",
+    "trustService": "With you like family for {years} years.",
+    "offersTitle": "Offers & specials",
+    "visitTitle": "Visit our store"
+  },
+
+  "about": {
+    "storyTitle": "Our story",
+    "story1": "Located on Old GH Road, Pudukkottai — opposite Dhandayudhapani Temple, near Palaniyappa Mess — our {type} has served the people of this area for the past {years} years.",
+    "story2": "From daily Aavin milk and dairy products to cold drinks, groceries, household items and pooja items, we offer everything under one roof.",
+    "story3": "Quality products, fair prices, friendly service — that is who we are.",
+    "valuesTitle": "Our values",
+    "qualityText": "We sell only quality products from trusted brands.",
+    "priceText": "Fair prices that suit every family.",
+    "serviceText": "We treat our customers as our own family.",
+    "shopTitle": "Our store"
+  },
+
+  "offersPage": {
+    "title": "Offers & specials",
+    "text": "This week's special offers and store announcements",
+    "empty": "New offers coming soon! Ask us on WhatsApp.",
+    "notifyTitle": "Be the first to know about offers",
+    "notifyText": "Send us a message on WhatsApp.",
+    "notifyMessage": "Hello! Please let me know about new offers.",
+    "posterAlt": "Store notice: Aavin milk and cold drinks available here",
+    "posterCaption": "Store notice"
+  },
+
+  "productsPage": {
+    "title": "Our products",
+    "text": "Everything you need under one roof — search, then ask us on WhatsApp."
+  },
+
+  "contactPage": {
+    "text": "{landmark} — come and visit us!"
+  },
+
+  "reviews": {
+    "eyebrow": "Customer reviews",
+    "title": "What our customers say",
+    "text": "The love and trust of the people of Pudukkottai is our strength.",
+    "emptyTitle": "No reviews yet",
+    "emptyText": "Be the first to share your experience!",
+    "share": "Share your review",
+    "formText": "Tell us about your experience at our store.",
+    "rating": "Rating",
+    "ratingWords": ["", "Poor", "Fair", "Good", "Very good", "Excellent!"],
+    "name": "Your name *",
+    "place": "Town / area",
+    "placePlaceholder": "Pudukkottai",
+    "review": "Your review *",
+    "reviewPlaceholder": "About our products, prices, service…",
+    "submit": "Add review",
+    "thanks": "Thank you, {name}!",
+    "added": "Your review has been added to our customer reviews.",
+    "view": "View"
+  },
+
+  "badge": {
+    "label": "Years Anniversary",
+    "ordinal": "th",
+    "years": "{years} years"
+  }
+}

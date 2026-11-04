@@ -5,41 +5,37 @@ import SectionHeading from '@/components/SectionHeading';
 import AnniversaryBadge from '@/components/AnniversaryBadge';
 import Reveal from '@/components/Reveal';
 import usePageTitle from '@/hooks/usePageTitle';
-import { formatTamilTime } from '@/lib/hours';
+import { formatClock } from '@/lib/hours';
 import store from '@/data/store.json';
 import categories from '@/data/categories.json';
-import ta from '@/i18n/ta.json';
+import { fill, useLang } from '@/i18n';
 
 const SIDES = ['left', 'up', 'right'];
 
 export default function About() {
+  const { lang, t: ta, pick } = useLang();
   usePageTitle(ta.nav.about);
   const stats = [
-    { icon: Award, value: `${store.years}+`, label: 'ஆண்டுகள் சேவை' },
-    { icon: Layers, value: categories.length, label: 'பொருள் வகைகள்' },
-    { icon: Moon, value: formatTamilTime(store.hours.close).split(' ')[1], label: 'இரவு வரை திறந்திருக்கும்' },
+    { icon: Award, value: `${store.years}+`, label: ta.stats.years },
+    { icon: Layers, value: categories.length, label: ta.stats.categories },
+    { icon: Moon, value: formatClock(store.hours.close), label: ta.stats.openTill },
   ];
   const values = [
-    { icon: BadgeCheck, title: 'தரமான பொருட்கள்', text: 'நம்பகமான பிராண்டுகளின் தரமான பொருட்களை மட்டுமே விற்பனை செய்கிறோம்.' },
-    { icon: IndianRupee, title: 'நியாயமான விலை', text: 'ஒவ்வொரு குடும்பத்திற்கும் ஏற்ற நியாயமான விலை.' },
-    { icon: HeartHandshake, title: 'அன்பான சேவை', text: 'வாடிக்கையாளர்களை எங்கள் குடும்பமாகவே கருதுகிறோம்.' },
+    { icon: BadgeCheck, title: ta.values.quality, text: ta.about.qualityText },
+    { icon: IndianRupee, title: ta.values.price, text: ta.about.priceText },
+    { icon: HeartHandshake, title: ta.values.service, text: ta.about.serviceText },
   ];
+  const type = pick(store, 'type');
   return (
     <>
-      <PageHeader title={ta.nav.about} description={store.tagline_ta} crumbs={[{ label: ta.nav.about }]} />
+      <PageHeader title={ta.nav.about} description={pick(store, 'tagline')} crumbs={[{ label: ta.nav.about }]} />
 
       <section className="container-x grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1.3fr_1fr]">
         <Reveal from="left" className="space-y-4 leading-relaxed text-muted-foreground sm:text-lg">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">எங்கள் கதை</h2>
-          <p>
-            புதுக்கோட்டை பழைய ஜி.எச். ரோட்டில், தண்டாயுதபாணி கோவில் எதிரில், பழனியப்பா மெஸ் அருகில் அமைந்துள்ள எங்கள் {store.type_ta}{' '}
-            கடந்த {store.years} ஆண்டுகளாக இப்பகுதி மக்களுக்குச் சேவை செய்து வருகிறது.
-          </p>
-          <p>
-            தினசரி தேவையான ஆவின் பால் மற்றும் பால் பொருட்கள் முதல் குளிர் பானங்கள், மளிகை, வீட்டு உபயோகப்
-            பொருட்கள், பூஜைப் பொருட்கள் வரை அனைத்தையும் ஒரே இடத்தில் வழங்குகிறோம்.
-          </p>
-          <p className="font-medium text-foreground">தரமான பொருட்கள், நியாயமான விலை, அன்பான சேவை — இதுவே எங்கள் அடையாளம்.</p>
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{ta.about.storyTitle}</h2>
+          <p>{fill(ta.about.story1, { type: lang === 'en' ? type.toLowerCase() : type, years: store.years })}</p>
+          <p>{ta.about.story2}</p>
+          <p className="font-medium text-foreground">{ta.about.story3}</p>
         </Reveal>
         <Reveal from="right" delay={120}>
         <Card className="mx-auto w-full max-w-sm">
@@ -47,7 +43,7 @@ export default function About() {
             <AnniversaryBadge />
           </CardContent>
           <CardHeader className="text-center">
-            <CardTitle>{store.name_ta}</CardTitle>
+            <CardTitle>{pick(store, 'name')}</CardTitle>
             <CardDescription>{ta.footerTagline}</CardDescription>
           </CardHeader>
         </Card>
@@ -73,7 +69,7 @@ export default function About() {
       </section>
 
       <section className="container-x py-12 sm:py-16">
-        <SectionHeading title="எங்கள் மதிப்புகள்" />
+        <SectionHeading title={ta.about.valuesTitle} />
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {values.map(({ icon: Icon, title, text }, i) => (
             <Reveal as="li" key={title} from={SIDES[i % 3]} delay={i * 100}>
@@ -93,11 +89,11 @@ export default function About() {
 
       {store.photos.length > 0 && (
         <section className="container-x pb-16">
-          <SectionHeading title="எங்கள் கடை" />
+          <SectionHeading title={ta.about.shopTitle} />
           <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
             {store.photos.map((photo) => (
               <li key={photo.src}>
-                <img src={photo.src} alt={photo.alt_ta} loading="lazy" className="aspect-[4/3] w-full rounded-xl border object-cover" />
+                <img src={photo.src} alt={pick(photo, 'alt')} loading="lazy" className="aspect-[4/3] w-full rounded-xl border object-cover" />
               </li>
             ))}
           </ul>

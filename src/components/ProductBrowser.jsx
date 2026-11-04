@@ -13,7 +13,7 @@ import ActionLink from '@/components/ActionLink';
 import { cn } from '@/lib/utils';
 import categories from '@/data/categories.json';
 import products from '@/data/products.json';
-import ta from '@/i18n/ta.json';
+import { fill, useLang } from '@/i18n';
 
 const norm = (s) => s.normalize('NFC').toLowerCase().trim();
 
@@ -21,6 +21,7 @@ const chip = ({ isActive }) =>
   cn(buttonVariants({ variant: isActive ? 'default' : 'outline', size: 'sm' }), 'rounded-full');
 
 export default function ProductBrowser({ category = null }) {
+  const { t: ta, pick } = useLang();
   const [query, setQuery] = useState('');
   const q = norm(query);
 
@@ -66,13 +67,13 @@ export default function ProductBrowser({ category = null }) {
             </Button>
           )}
         </div>
-        <nav aria-label="பொருள் வகைகள்" className="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 sm:-mx-6 sm:px-6">
+        <nav aria-label={ta.categoriesNav} className="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 sm:-mx-6 sm:px-6">
           <NavLink to="/products" end className={chip}>
             {ta.all}
           </NavLink>
           {categories.map((c) => (
             <NavLink key={c.slug} to={`/products/${c.slug}`} className={chip}>
-              {c.name_ta}
+              {pick(c, 'name')}
             </NavLink>
           ))}
         </nav>
@@ -95,7 +96,7 @@ export default function ProductBrowser({ category = null }) {
             <p className="mt-4 text-lg font-semibold">{ta.noResults}</p>
             <p className="mt-1 max-w-md text-sm text-muted-foreground">{ta.noResultsHint}</p>
             <Button asChild className="mt-5">
-              <ActionLink kind="whatsapp" message={`வணக்கம்! "${query}" கிடைக்குமா?`}>
+              <ActionLink kind="whatsapp" message={fill(ta.askAvailable, { q: query })}>
                 {ta.actions.ask}
               </ActionLink>
             </Button>
@@ -106,13 +107,13 @@ export default function ProductBrowser({ category = null }) {
           <section
             key={cat.slug}
             className="mt-8"
-            {...(category ? { 'aria-label': cat.name_ta } : { 'aria-labelledby': `cat-${cat.slug}` })}
+            {...(category ? { 'aria-label': pick(cat, 'name') } : { 'aria-labelledby': `cat-${cat.slug}` })}
           >
             {!category && (
               <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
                 <h2 id={`cat-${cat.slug}`} className="flex items-center gap-3 text-lg font-semibold tracking-tight sm:text-xl">
                   <CategoryIcon slug={cat.slug} className="size-8" iconClassName="size-4" />
-                  {cat.name_ta}
+                  {pick(cat, 'name')}
                   <Badge variant="secondary">{items.length}</Badge>
                 </h2>
                 <Button asChild variant="link" size="sm" className="px-0">
