@@ -519,56 +519,26 @@
     "inStock": true
   },
   {
-    "id": "bread",
-    "category": "bakery",
-    "name_ta": "பிரெட்",
-    "name_en": "Bread",
-    "sizes": [
-      "சிறியது",
-      "பெரியது"
-    ],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "buns",
-    "category": "bakery",
-    "name_ta": "பன்",
-    "name_en": "Buns",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "rusk",
-    "category": "bakery",
-    "name_ta": "ரஸ்க்",
-    "name_en": "Rusk",
-    "sizes": [
-      "200 கி",
-      "300 கி"
-    ],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "cake",
-    "category": "bakery",
-    "name_ta": "கேக் & கப் கேக்",
-    "name_en": "Cake & Cupcakes",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
     "id": "eggs",
-    "category": "bakery",
-    "name_ta": "முட்டை",
-    "name_en": "Eggs",
+    "category": "eggs",
+    "name_ta": "பண்ணை முட்டை",
+    "name_en": "Farm Eggs",
     "sizes": [
       "6",
       "12",
       "30"
+    ],
+    "price": null,
+    "inStock": true
+  },
+  {
+    "id": "country-eggs",
+    "category": "eggs",
+    "name_ta": "நாட்டுக்கோழி முட்டை",
+    "name_en": "Country Chicken Eggs",
+    "sizes": [
+      "6",
+      "12"
     ],
     "price": null,
     "inStock": true

@@ -2,7 +2,7 @@
   { "slug": "aavin", "name_ta": "ஆவின் பால் பொருட்கள்", "name_en": "Aavin Milk & Dairy", "desc_ta": "பால், தயிர், நெய், வெண்ணெய், பன்னீர், ஐஸ்கிரீம்" },
   { "slug": "cold-drinks", "name_ta": "குளிர் பானங்கள்", "name_en": "Cold Drinks", "desc_ta": "குளிரூட்டப்பட்ட முன்னணி குளிர் பானங்கள்" },
   { "slug": "groceries", "name_ta": "மளிகைப் பொருட்கள்", "name_en": "Groceries & Staples", "desc_ta": "அரிசி, பருப்பு, எண்ணெய், மசாலா பொடிகள்" },
-  { "slug": "bakery", "name_ta": "பேக்கரி & முட்டை", "name_en": "Bakery & Eggs", "desc_ta": "பிரெட், பன், ரஸ்க், கேக், முட்டை" },
+  { "slug": "eggs", "name_ta": "முட்டை", "name_en": "Eggs", "desc_ta": "தினசரி புதிய பண்ணை முட்டை மற்றும் நாட்டுக்கோழி முட்டை" },
   { "slug": "instant-food", "name_ta": "உடனடி உணவுகள்", "name_en": "Instant & Ready Food", "desc_ta": "நூடுல்ஸ், சேமியா, இட்லி / தோசை மாவு, ஊறுகாய், அப்பளம்" },
   { "slug": "health-drinks", "name_ta": "ஹெல்த் டிரிங்க்ஸ் & காலை உணவு", "name_en": "Health Drinks & Breakfast", "desc_ta": "பூஸ்ட், ஹார்லிக்ஸ், போர்ன்விட்டா, ஓட்ஸ், கார்ன்ஃபிளேக்ஸ், தேன்" },
   { "slug": "dry-fruits", "name_ta": "உலர் பழங்கள் & இனிப்புகள்", "name_en": "Dry Fruits & Sweeteners", "desc_ta": "முந்திரி, பாதாம், உலர் திராட்சை, பேரீச்சம்பழம், வெல்லம், கல்கண்டு" },
