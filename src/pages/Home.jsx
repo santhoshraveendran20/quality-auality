@@ -27,6 +27,7 @@ import CategoryGrid from '@/components/CategoryGrid';
 import OfferCard from '@/components/OfferCard';
 import MapEmbed from '@/components/MapEmbed';
 import VisitCard from '@/components/VisitCard';
+import Testimonials from '@/components/Testimonials';
 import usePageTitle from '@/hooks/usePageTitle';
 import { activeOffers } from '@/lib/offers';
 import { formatTamilTime, hoursText } from '@/lib/hours';
@@ -348,6 +349,8 @@ export default function Home() {
           </ul>
         </section>
       )}
+
+      <Testimonials />
 
       <section className="border-t bg-muted/30 py-12 sm:py-16">
         <div className="container-x">

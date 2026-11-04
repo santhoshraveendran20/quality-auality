@@ -123,6 +123,21 @@
   animation: float 5s ease-in-out infinite;
 }
 
+/* Endless horizontal scroll for the testimonials rows (each row renders its list twice) */
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+@utility animate-marquee-reverse {
+  animation: marquee 45s linear infinite reverse;
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   &::-webkit-scrollbar {
