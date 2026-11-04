@@ -8,7 +8,7 @@
   { "slug": "dry-fruits", "name_ta": "உலர் பழங்கள் & இனிப்புகள்", "name_en": "Dry Fruits & Sweeteners", "desc_ta": "முந்திரி, பாதாம், உலர் திராட்சை, பேரீச்சம்பழம், வெல்லம், கல்கண்டு" },
   { "slug": "snacks", "name_ta": "தின்பண்டங்கள்", "name_en": "Snacks & Biscuits", "desc_ta": "பிஸ்கட், சிப்ஸ், முறுக்கு, சாக்லேட்" },
   { "slug": "household", "name_ta": "வீட்டுப் பொருட்கள்", "name_en": "Household Care", "desc_ta": "சோப்புத் தூள், பாத்திரம் கழுவும் சோப், சுத்தப் பொருட்கள்" },
-  { "slug": "kitchenware", "name_ta": "சமையலறை & பிளாஸ்டிக் பொருட்கள்", "name_en": "Kitchen & Plasticware", "desc_ta": "டப்பாக்கள், வாளி, டம்ளர், அலுமினியம் ஃபாயில், டிஸ்போசபிள் தட்டு & கப்" },
+  { "slug": "cleaning-tools", "name_ta": "மாப் ஸ்டிக் & விளக்குமாறு", "name_en": "Mop Sticks & Brooms", "desc_ta": "வீடு சுத்தம் செய்ய மாப் ஸ்டிக், விளக்குமாறு" },
   { "slug": "personal-care", "name_ta": "தனிநபர் பராமரிப்பு", "name_en": "Personal Care", "desc_ta": "குளியல் சோப், ஷாம்பு, பற்பசை, தேங்காய் எண்ணெய்" },
   { "slug": "baby-care", "name_ta": "குழந்தைப் பராமரிப்பு", "name_en": "Baby Care", "desc_ta": "டயப்பர், பேபி சோப், பவுடர், பேபி ஆயில், குழந்தை உணவு" },
   { "slug": "pooja", "name_ta": "பூஜைப் பொருட்கள்", "name_en": "Pooja Items", "desc_ta": "ஊதுபத்தி, கற்பூரம், விளக்கு எண்ணெய், குங்குமம்" },

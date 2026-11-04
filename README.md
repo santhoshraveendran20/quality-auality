@@ -1,7 +1,7 @@
 # குவாலிட்டி & குவாலிட்டி – Store Website
 
 Tamil-first, mobile-first website for the departmental store opposite Dhandayudhapani Temple,
-GH Road, Pudukkottai – 622001. Built with React 19, React Router 7,
+Old GH Road, Pudukkottai – 622001. Built with React 19, React Router 7,
 Tailwind CSS 4 and Vite.
 
 ## Run it

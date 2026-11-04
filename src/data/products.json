@@ -792,55 +792,19 @@
     "inStock": true
   },
   {
-    "id": "containers",
-    "category": "kitchenware",
-    "name_ta": "பிளாஸ்டிக் டப்பாக்கள்",
-    "name_en": "Storage Containers",
+    "id": "mop-stick",
+    "category": "cleaning-tools",
+    "name_ta": "மாப் ஸ்டிக்",
+    "name_en": "Mop Stick",
     "sizes": [],
     "price": null,
     "inStock": true
   },
   {
-    "id": "bucket-mug",
-    "category": "kitchenware",
-    "name_ta": "வாளி & மக்",
-    "name_en": "Bucket & Mug",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "steel-tumbler",
-    "category": "kitchenware",
-    "name_ta": "ஸ்டீல் டம்ளர் & தட்டு",
-    "name_en": "Steel Tumblers & Plates",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "foil",
-    "category": "kitchenware",
-    "name_ta": "அலுமினியம் ஃபாயில்",
-    "name_en": "Aluminium Foil",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "disposables",
-    "category": "kitchenware",
-    "name_ta": "டிஸ்போசபிள் தட்டு & கப்",
-    "name_en": "Disposable Plates & Cups",
-    "sizes": [],
-    "price": null,
-    "inStock": true
-  },
-  {
-    "id": "scrubber",
-    "category": "kitchenware",
-    "name_ta": "ஸ்க்ரப்பர் & ஸ்பாஞ்ச்",
-    "name_en": "Scrubber & Sponge",
+    "id": "broom",
+    "category": "cleaning-tools",
+    "name_ta": "விளக்குமாறு",
+    "name_en": "Broom",
     "sizes": [],
     "price": null,
     "inStock": true
