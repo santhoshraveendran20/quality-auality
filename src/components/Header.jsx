@@ -28,7 +28,7 @@ export function useNav() {
 function Brand() {
   const { t, pick } = useLang();
   return (
-    <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label={`${pick(store, 'name')} – ${t.nav.home}`}>
+    <Link to="/" className="flex min-w-0 items-center gap-2.5 xl:shrink-0" aria-label={`${pick(store, 'name')} – ${t.nav.home}`}>
       <Logo size="sm" alt="" className="w-16" />
       <span className="min-w-0 leading-tight">
         <span className="block truncate text-[15px] font-semibold sm:text-base">{pick(store, 'name')}</span>
@@ -41,8 +41,11 @@ function Brand() {
 }
 
 export default function Header() {
-  const { t: ta, pick } = useLang();
+  const { lang, t: ta, pick } = useLang();
   const NAV = useNav();
+  // Tamil menu labels are about twice as wide as English ones, so the full menu bar
+  // only fits from the xl breakpoint; below that Tamil uses the ☰ menu sheet.
+  const longLabels = lang === 'ta';
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -52,10 +55,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/65">
-      <div className="container-x flex h-16 items-center justify-between gap-3">
+      <div className="container-x flex h-16 items-center justify-between gap-3 xl:max-w-7xl">
         <Brand />
 
-        <nav aria-label={ta.mainNav} className="hidden items-center gap-1 lg:flex">
+        <nav aria-label={ta.mainNav} className={cn('hidden items-center gap-1', longLabels ? 'xl:flex' : 'lg:flex')}>
           {NAV.map((item) => (
             <NavLink
               key={item.to}
@@ -64,6 +67,7 @@ export default function Header() {
               className={({ isActive }) =>
                 cn(
                   buttonVariants({ variant: isActive ? 'secondary' : 'ghost', size: 'sm' }),
+                  longLabels && 'px-2.5 text-[13px]',
                   !isActive && 'text-muted-foreground hover:text-foreground',
                 )
               }
@@ -81,7 +85,7 @@ export default function Header() {
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label={ta.menu}>
+              <Button variant="ghost" size="icon" className={longLabels ? 'xl:hidden' : 'lg:hidden'} aria-label={ta.menu}>
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>

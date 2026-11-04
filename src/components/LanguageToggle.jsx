@@ -12,7 +12,7 @@ export default function LanguageToggle({ className }) {
   const { lang, setLang, t } = useLang();
   return (
     <div role="group" aria-label="மொழி / Language" title={t.switchTo} className={cn('flex items-center rounded-full border bg-muted/50 p-0.5', className)}>
-      <Languages aria-hidden="true" className="mx-1.5 hidden size-4 text-muted-foreground sm:block" />
+      <Languages aria-hidden="true" className="mx-1.5 hidden size-4 text-muted-foreground 2xl:block" />
       {OPTIONS.map((o) => (
         <button
           key={o.value}
