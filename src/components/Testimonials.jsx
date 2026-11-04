@@ -1,6 +1,7 @@
 import { MessageSquareHeart, Quote, Star } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import Reveal from '@/components/Reveal';
+import ReviewForm from '@/components/ReviewForm';
 import { cn } from '@/lib/utils';
 import testimonials from '@/data/testimonials.json';
 
@@ -92,6 +93,9 @@ export default function Testimonials() {
           title="எங்கள் வாடிக்கையாளர்கள் சொல்வது"
           description="புதுக்கோட்டை மக்களின் அன்பும் நம்பிக்கையுமே எங்கள் பலம்."
         />
+        <div className="mt-6 flex justify-center">
+          <ReviewForm />
+        </div>
       </Reveal>
       <div className="relative mt-10 space-y-2">
         <MarqueeRow items={items.slice(0, half)} />
